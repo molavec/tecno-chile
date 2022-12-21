@@ -1532,9 +1532,9 @@
     }
 
     var defaultLocaleWeekdays =
-            'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
-        defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
-        defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
+            'Domingo_Lunes_Martes_Miercoles_Jueves_Viernes_Sabado'.split('_'),
+        defaultLocaleWeekdaysShort = 'Dom_Lun_Mar_Mie_Jue_Vie_Sab'.split('_'),
+        defaultLocaleWeekdaysMin = 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
         defaultWeekdaysRegex = matchWord,
         defaultWeekdaysShortRegex = matchWord,
         defaultWeekdaysMinRegex = matchWord;
@@ -1872,7 +1872,7 @@
         return this.hours() || 24;
     }
 
-    addFormatToken('H', ['HH', 2], 0, 'hour');
+    addFormatToken('H', ['HH', 2], 0, 'hora');
     addFormatToken('h', ['hh', 2], 0, hFormat);
     addFormatToken('k', ['kk', 2], 0, kFormat);
 
@@ -1917,10 +1917,10 @@
 
     // ALIASES
 
-    addUnitAlias('hour', 'h');
+    addUnitAlias('hora', 'h');
 
     // PRIORITY
-    addUnitPriority('hour', 13);
+    addUnitPriority('hora', 13);
 
     // PARSING
 
@@ -3104,15 +3104,15 @@
     };
 
     var ordering = [
-        'year',
-        'quarter',
-        'month',
-        'week',
-        'day',
-        'hour',
-        'minute',
-        'second',
-        'millisecond',
+        'año',
+        'trimestre',
+        'mes',
+        'semana',
+        'dia',
+        'hora',
+        'minuto',
+        'segundo',
+        'millisegundo',
     ];
 
     function isDurationValid(m) {
@@ -3862,28 +3862,28 @@
         units = normalizeUnits(units);
 
         switch (units) {
-            case 'year':
+            case 'año':
                 output = monthDiff(this, that) / 12;
                 break;
-            case 'month':
+            case 'mes':
                 output = monthDiff(this, that);
                 break;
-            case 'quarter':
+            case 'trimestre':
                 output = monthDiff(this, that) / 3;
                 break;
-            case 'second':
+            case 'segundo':
                 output = (this - that) / 1e3;
                 break; // 1000
-            case 'minute':
+            case 'minuto':
                 output = (this - that) / 6e4;
                 break; // 1000 * 60
-            case 'hour':
+            case 'hora':
                 output = (this - that) / 36e5;
                 break; // 1000 * 60 * 60
-            case 'day':
+            case 'dia':
                 output = (this - that - zoneDelta) / 864e5;
                 break; // 1000 * 60 * 60 * 24, negate dst
-            case 'week':
+            case 'semana':
                 output = (this - that - zoneDelta) / 6048e5;
                 break; // 1000 * 60 * 60 * 24 * 7, negate dst
             default:
@@ -4101,20 +4101,20 @@
         startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
 
         switch (units) {
-            case 'year':
+            case 'año':
                 time = startOfDate(this.year(), 0, 1);
                 break;
-            case 'quarter':
+            case 'trimestre':
                 time = startOfDate(
                     this.year(),
                     this.month() - (this.month() % 3),
                     1
                 );
                 break;
-            case 'month':
+            case 'mes':
                 time = startOfDate(this.year(), this.month(), 1);
                 break;
-            case 'week':
+            case 'semana':
                 time = startOfDate(
                     this.year(),
                     this.month(),
@@ -4128,22 +4128,22 @@
                     this.date() - (this.isoWeekday() - 1)
                 );
                 break;
-            case 'day':
+            case 'dia':
             case 'date':
                 time = startOfDate(this.year(), this.month(), this.date());
                 break;
-            case 'hour':
+            case 'hora':
                 time = this._d.valueOf();
                 time -= mod$1(
                     time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE),
                     MS_PER_HOUR
                 );
                 break;
-            case 'minute':
+            case 'minuto':
                 time = this._d.valueOf();
                 time -= mod$1(time, MS_PER_MINUTE);
                 break;
-            case 'second':
+            case 'segundo':
                 time = this._d.valueOf();
                 time -= mod$1(time, MS_PER_SECOND);
                 break;
