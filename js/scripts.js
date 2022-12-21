@@ -1,6 +1,6 @@
-const tiempo = Date.now();
-const hoy = new Date(tiempo);
-document.getElementById("fecha").innerHTML = hoy.toLocaleDateString() + ' - ' + hoy.toTimeString();
+//const tiempo = Date.now();
+//const hoy = new Date(tiempo);
+//document.getElementById("fecha").innerHTML = hoy.toLocaleDateString() + ' - ' + hoy.toTimeString();
 
 document.getElementById("valor").setAttribute('style', 'color: orange');
         document.getElementById("valor").innerHTML = 'Insuficiente '+document.getElementById("evalua").value;

@@ -56,7 +56,7 @@
     </header>
     <br><br>
     <main>
-        <section class="py-4 mt-5">
+        <section class="py-4 mt-3">
             <div class="encabeza">
                 <h1>Tienda Cachureando</h1>
             </div>
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </section>
-        <div class="container">
+        <div class="container" id="ventas">
             <div class="row">
                 <div class="col-md-12">
                     <hr>
@@ -606,7 +606,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <!-- Additional Javascript -->
-    <script src="js/main.js"></script>
-    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script>
+        // const tiempo = Date.now();
+        // const hoy = new Date(tiempo);
+
+        //document.getElementById("fecha").innerHTML = moment().format('llll');
+        document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+        // function formatoFecha(fecha, formato) {
+        //         const map = {
+        //             dd: fecha.getDate(),
+        //             mm: fecha.getMonth() + 1,
+        //             yy: fecha.getFullYear().toString().slice(-2),
+        //             yyyy: fecha.getFullYear()
+        //         }
+
+        //         return formato.replace(/dd|mm|yy|yyyy/gi, matched => map[matched])
+        //     }
+    </script>
 </body>
 </html>
+
