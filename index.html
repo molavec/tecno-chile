@@ -27,7 +27,6 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
             <div class="container-fluid">
                 <div id="fecha" style="color: aliceblue;"></div>
-                <!-- <a class="navbar-brand" href="#">Cachureando</a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -101,42 +100,22 @@
                 <div class="col-md-12">
                     <hr>
                     <div class="col-md-12">
-                        <!-- 
-                            =================================
-                            PC Indicators
-                            ================================= 
-                        -->
+                        <!-- PC Indicators -->
                         <div class="button-placement d-none d-sm-none d-md-block">
                             <a class="btn btn-sm btn-success" href="#carouselExample" role="button" data-slide="prev"> <i class="fas fa-chevron-circle-left"></i> </a>
                             <a class="btn btn-sm btn-success" href="#carouselExample" role="button" data-slide="next"> <i class="fas fa-chevron-circle-right"></i> </a>
                         </div>
-                        <!-- 
-                            =================================
-                            End of PC Indicators
-                            ================================= 
-                        -->
-                        <!-- 
-                            =================================
-                            Mobile Indicators
-                            ================================= 
-                        -->
+                        <!-- End of PC Indicators -->
+                        <!-- Mobile Indicators -->
                         <div class="button-placement d-md-none d-lg-none d-xl-none">
                             <a class="btn btn-sm btn-success" href="#carouselExampleMobile" role="button" data-slide="prev"> <i class="fas fa-chevron-circle-left"></i> </a>
                             <a class="btn btn-sm btn-success" href="#carouselExampleMobile" role="button" data-slide="next"> <i class="fas fa-chevron-circle-right"></i> </a>
                         </div>
-                        <!-- 
-                            =================================
-                            End of Mobile Indicators
-                            ================================= 
-                        -->
+                        <!-- End of Mobile Indicators -->
                     </div>
                 </div>
                 <!-- End of Col-md-12 -->
-                <!-- 
-                    =================================
-                    This Code Block is For PC Edition
-                    ================================= 
-                -->
+                <!-- This Code Block is For PC Edition -->
                 <div id="carouselExample" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -349,16 +328,8 @@
                     </div>
                 </div>
                 <!-- End of Carousel Example -->
-                <!-- 
-                    =================================
-                    /End of PC Edition 
-                    =================================
-                -->
-                <!-- 
-                    =================================
-                    This Code Block is For Mobile Edition
-                    ================================= 
-                -->
+                <!-- End of PC Edition -->
+                <!-- This Code Block is For Mobile Edition -->
                 <div id="carouselExampleMobile" class="carousel slide d-md-none d-lg-none d-xl-none" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -593,11 +564,7 @@
                     </div>
                 </div>
                 <!-- End of Carousel Example -->
-                <!-- 
-                    =================================
-                    /End of Mobile Edition 
-                    =================================
-                -->
+                <!-- End of Mobile Edition -->
             </div>
             <!-- End of Row -->
         </div>
@@ -618,24 +585,11 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script>
-        // const tiempo = Date.now();
-        // const hoy = new Date(tiempo);
-
-        //document.getElementById("fecha").innerHTML = moment().format('llll');
+        
         document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
-        // function formatoFecha(fecha, formato) {
-        //         const map = {
-        //             dd: fecha.getDate(),
-        //             mm: fecha.getMonth() + 1,
-        //             yy: fecha.getFullYear().toString().slice(-2),
-        //             yyyy: fecha.getFullYear()
-        //         }
-
-        //         return formato.replace(/dd|mm|yy|yyyy/gi, matched => map[matched])
-        //     }
+        
         function add(p){
             let ident = document.getElementById(p.id);
-            //console.log(ident.dataset.id);
             $(location).attr('href', 'http://127.0.0.1:5500/carro.html?id='+ ident.dataset.id);
         }
     </script>
