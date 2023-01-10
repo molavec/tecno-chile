@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Free Bootstrap 4 Carousel">
-    <meta name="keywords" content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider for freee, Free Bootstrap 4 Slider, Free HTML Slider">
+    <meta name="keywords"
+        content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider for freee, Free Bootstrap 4 Slider, Free HTML Slider">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Cachureando</title>
 
     <!-- Bootstrap 4 Default CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <!-- Additional CSS -->
     <link rel="stylesheet" href="/css/estilos.css">
@@ -30,8 +32,8 @@
             <div class="container-fluid">
                 <div style="color: aliceblue;">Cachureando</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="float-right">
@@ -43,7 +45,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="contacto.html">Contacto</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -54,467 +56,156 @@
 
     <!-- Contenido -->
     <main>
-        <section class="container" id="ventas">
-            <div class="row">
-                <div class="col-md-12">
-                    <hr>
-                    <div class="col-md-12">
-                        <!-- PC Indicators -->
-                        <div class="button-placement d-none d-sm-none d-md-block">
-                            <a class="btn btn-sm btn-success" href="#carouselExample" role="button" data-slide="prev"> <i class="fas fa-chevron-circle-left"></i> </a>
-                            <a class="btn btn-sm btn-success" href="#carouselExample" role="button" data-slide="next"> <i class="fas fa-chevron-circle-right"></i> </a>
-                        </div>
-                        <!-- End of PC Indicators -->
-                        <!-- Mobile Indicators -->
-                        <div class="button-placement d-md-none d-lg-none d-xl-none">
-                            <a class="btn btn-sm btn-success" href="#carouselExampleMobile" role="button" data-slide="prev"> <i class="fas fa-chevron-circle-left"></i> </a>
-                            <a class="btn btn-sm btn-success" href="#carouselExampleMobile" role="button" data-slide="next"> <i class="fas fa-chevron-circle-right"></i> </a>
-                        </div>
-                        <!-- End of Mobile Indicators -->
-                    </div>
-                </div>
-                <!-- End of Col-md-12 -->
-                <!-- This Code Block is For PC Edition -->
-                <div id="carouselExample" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_1.jpg" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$2000</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton1" data-id="1" onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det1" data-id="1">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_2.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$3000</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton2" data-id="2" onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det2" data-id="2">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_3.jpg" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton3" data-id="3" onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det3" data-id="3">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_4.jpeg" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton4" data-id="4" onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det4" data-id="4">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+        <!--nueva seccion de productos-->
+        <section class="container">
+
+            <div class="row my-1 py-4">
+                <div class="col-md-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_1.jpg" alt="Product">
+                        <small>Precio</small>
+                        <p>$2000</p>
+                        <div class="row py-3">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton1" data-id="1"
+                                    onclick="add(this)">Añadir</button>
                             </div>
-                        </div>
-                        <!-- Carousel Item 1 -->
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_5.jpg" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_6.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton6" data-id="6"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det6" data-id="6">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_7.jpg" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton7" data-id="7"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det7" data-id="7">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_8.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton8" data-id="8"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det8" data-id="8">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det1"
+                                    data-id="1">Detalles</button>
                             </div>
-
-                        </div>
-                        <!-- Carousel Item 2 -->
-
-                        <div class="carousel-item">
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_9.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton9" data-id="9"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det9" data-id="9">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_10.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton10" data-id="10"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det10" data-id="10">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_11.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton11" data-id="11"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det11" data-id="11">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="product-block">
-                                        <img class="d-block w-100 foto" src="/img/img_12.webp" alt="Product">
-                                        <small>Precio</small>
-                                        <p>$200</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-success btn-sm" type="button" id="boton12" data-id="12"
-                                                    onclick="add(this)">Añadir</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det12" data-id="12">Detalles</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-                <!-- End of Carousel Example -->
-                <!-- End of PC Edition -->
-                <!-- This Code Block is For Mobile Edition -->
-                <div id="carouselExampleMobile" class="carousel slide d-md-none d-lg-none d-xl-none" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 1&font=noto" alt="Product">
-                                <small>Precio</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-success btn-sm" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
+                <div class="col-md-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_2.webp" alt="Product">
+                        <small>Precio</small>
+                        <p>$3000</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton2" data-id="2"
+                                    onclick="add(this)">Añadir</button>
                             </div>
-
-                        </div>
-                        <!-- Carousel Item 1 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 2&font=noto" alt="Product">
-                                <h4>Product 2</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-success btn-sm" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det2"
+                                    data-id="2">Detalles</button>
                             </div>
                         </div>
-                        <!-- Carousel Item 2 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 3&font=noto" alt="Product">
-                                <h4>Product 3</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 3 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 4&font=noto" alt="Product">
-                                <h4>Product 4</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                        <!-- Carousel Item 4 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 5&font=noto" alt="Product">
-                                <h4>Product 5</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 5 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 6&font=noto" alt="Product">
-                                <h4>Product 6</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 6 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 7&font=noto" alt="Product">
-                                <h4>Product 7</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 7 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 8&font=noto" alt="Product">
-                                <h4>Product 8</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 8 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 9&font=noto" alt="Product">
-                                <h4>Product 9</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 9 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 10&font=noto" alt="Product">
-                                <h4>Product 10</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 10 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 11&font=noto" alt="Product">
-                                <h4>Product 11</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 11 -->
-
-                        <div class="carousel-item">
-                            <div class="product-block">
-                                <img class="d-block w-100" src="https://fakeimg.pl/800x400/?retina=1&text=Product 12&font=noto" alt="Product">
-                                <h4>Product 12</h4>
-                                <small>Variant</small>
-                                <p>$200</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-sm btn-success" href="#">Añadir</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-outline-danger btn-sm" href="#">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel Item 12 -->
                     </div>
                 </div>
-                <!-- End of Carousel Example -->
-                <!-- End of Mobile Edition -->
+                <div class="col-md-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_3.jpg" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton3" data-id="3"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det3"
+                                    data-id="3">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_4.jpeg" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton4" data-id="4"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det4"
+                                    data-id="4">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- End of Row -->
+
+            <div class="row my-1 py4">
+                <div class="col-md-3 my-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_5.jpg" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5"
+                                    data-id="5">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_6.webp" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton6" data-id="6"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det6"
+                                    data-id="6">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_7.jpg" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton7" data-id="7"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det7"
+                                    data-id="7">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-3">
+                    <div class="product-block">
+                        <img class="d-block w-100 foto" src="/img/img_8.webp" alt="Product">
+                        <small>Precio</small>
+                        <p>$200</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton8" data-id="8"
+                                    onclick="add(this)">Añadir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det8"
+                                    data-id="8">Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
-        
-        <section class="py-4 mt-3">
+
+        <section class="mt-5 py-5">
             <div class="encabeza">
                 <h1>Tienda Cachureando</h1>
             </div>
@@ -532,8 +223,9 @@
                             quo nam. Maxime, atque.</p>
                     </div>
                 </div>
+
             </div>
-        </section>        
+        </section>
     </main>
 
     <!-- Footer-->
@@ -553,14 +245,14 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script>
-        
+
         document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
-        
-        function add(p){
+
+        function add(p) {
             let ident = document.getElementById(p.id);
-            $(location).attr('href', 'http://127.0.0.1:5500/carro.html?id='+ ident.dataset.id);
+            $(location).attr('href', 'http://127.0.0.1:5500/carro.html?id=' + ident.dataset.id);
         }
     </script>
 </body>
-</html>
 
+</html>
