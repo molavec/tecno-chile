@@ -14,11 +14,11 @@ const productBlocks = catalog.map( (product) => {
         <p>${product.precio}</p>
         <div class="row">
             <div class="col-md-6">
-                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
-                    onclick="add(this)">Añadir</button>
+                <input class="input-cantidad" type="text" placeholder="cantidad" value="1" />
             </div>
             <div class="col-md-6">
-                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
+                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
+                    onclick="add(this)">Añadir</button>
             </div>
         </div>
     </div>
