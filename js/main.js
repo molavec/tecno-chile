@@ -14,7 +14,7 @@ const productBlocks = catalog.map( (product) => {
         <p>${product.precio}</p>
         <div class="row">
             <div class="col-md-6">
-                <input class="input-cantidad" type="text" placeholder="cantidad" value="1" />
+                <input class="input-cantidad" type="number" placeholder="cantidad" value="0"/>
             </div>
             <div class="col-md-6">
                 <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
