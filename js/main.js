@@ -1,8 +1,58 @@
+
+// CALCULO DE TOTALES
+/**
+ * Total sin impuestos
+ * @param { [{price: number; qty: number;}] } productsInCart 
+ */
+const getTotalWithoutTax = (productsInCart) => {
+    const value = productsInCart.reduce(
+        (acumulador, product) =>  acumulador + product.price * product.qty
+    );
+    return value;
+}
+
+
+/**
+ * Total con impuestos
+ * @param { [{price: number; qty: number;}] } productsInCart 
+ */
+const getTotalWithTax = (productsInCart) => {
+    const TAX = 1.19;
+    const value = productsInCart.reduce(
+        (acumulador, product) =>  acumulador + product.price * product.qty
+    );
+    return value* TAX;
+}
+
+/**
+ * Valor Impuesto
+ * @param { [{price: number; qty: number;}] } productsInCart 
+ */
+const getTax = (productsInCart) => {
+    const TAX = 0.19;
+    const value = productsInCart.reduce(
+        (acumulador, product) =>  acumulador + product.price * product.qty
+    );
+    return value*TAX;
+}
+
+
+// ACTIONS
+let productsInCart = {};
+
 $(document).ready(function(){
-            
+
+    // acciones al a
+    $('.product-block .add-button').click( function() {
+        // change state, usar if
+        // add product in cart
+        // update variables    
+    });
     
 });
 
+
+// PRODUCTS FROM JS
 
 const productBlocks = catalog.map( (product) => {
     return `<div class="col-md-3 my-3">
@@ -14,11 +64,10 @@ const productBlocks = catalog.map( (product) => {
         <p>${product.precio}</p>
         <div class="row">
             <div class="col-md-6">
-                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
-                    onclick="add(this)">Añadir</button>
+                <button idMio="${product.codigo}" class="add-button btn btn-outline-success btn-sm" type="button">Añadir</button>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
+                <button class="btn btn-outline-danger btn-sm" type="button">Detalles</button>
             </div>
         </div>
     </div>
@@ -31,10 +80,8 @@ for (let i=0; i < productBlocks.length ; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 
-//console.log(i);
-
-console.log('productBlocks', productBlocks);
-console.log('productsHTML', productsHTML);
+// console.log('productBlocks', productBlocks);
+// console.log('productsHTML', productsHTML);
 
 document.getElementById("products").innerHTML = productsHTML;
 
