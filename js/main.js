@@ -11,10 +11,7 @@ $(document).ready(function(){
 //document.getElementById("products").innerHTML= codeBlock
 
 
-
-const productsBlocks = [];
-
- const productBlocks = catalog.map( (product) => {
+const productBlocks = catalog.map( (product) => {
     return `<div class="col-md-3">
     <div class="product-block">
         <img class="d-block w-100 foto" src="${product.imagen}" alt="Product">
@@ -35,13 +32,15 @@ const productsBlocks = [];
 </div>`
 });
 
-const productsHTML = '';
+let productsHTML = '';
 
 for (let i=0; i < productBlocks.length ; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 
-console.log('productsBlocks', productsBlocks);
+//console.log(i);
+
+console.log('productBlocks', productBlocks);
 console.log('productsHTML', productsHTML);
 
 document.getElementById("products").innerHTML = productsHTML;
