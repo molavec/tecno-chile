@@ -122,3 +122,7 @@ footer p {
 .input-cantidad{
   max-width: 100%;
 }
+
+.cart-image{
+  max-width: 70px;
+}
