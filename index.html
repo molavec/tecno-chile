@@ -18,8 +18,8 @@
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <!-- Additional CSS -->
-    <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -27,7 +27,7 @@
 
 <body>
     <!--Header-->
-    <header>
+    <header class="mb-4">
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
             <div class="container-fluid">
                 <div style="color: aliceblue;">Cachureando</div>
@@ -52,89 +52,25 @@
             </div>
         </nav>
     </header>
-    <br><br>
 
     <!-- Contenido -->
     <main>
+        
+        <!-- Test code injection -->
+        <section id="Cards">
+            <h1>Holaaa</h1>
+        </section>
 
-        <!--nueva seccion de productos-->
-        <section class="container">
-
+        <!-- Products Section -->
+        <section>
             <div class="row my-1 py-4">
-                <div class="col-md-3">
-                    <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_1.jpg" alt="Product">
-                        <small>Precio</small>
-                        <p>$2000</p>
-                        <div class="row py-3">
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton1" data-id="1"
-                                    onclick="add(this)">Añadir</button>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det1"
-                                    data-id="1">Detalles</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_2.webp" alt="Product">
-                        <small>Precio</small>
-                        <p>$3000</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton2" data-id="2"
-                                    onclick="add(this)">Añadir</button>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det2"
-                                    data-id="2">Detalles</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_3.jpg" alt="Product">
-                        <small>Precio</small>
-                        <p>$200</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton3" data-id="3"
-                                    onclick="add(this)">Añadir</button>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det3"
-                                    data-id="3">Detalles</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_4.jpeg" alt="Product">
-                        <small>Precio</small>
-                        <p>$200</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton4" data-id="4"
-                                    onclick="add(this)">Añadir</button>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det4"
-                                    data-id="4">Detalles</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row my-1 py4">
-                <div class="col-md-3 my-3">
+                <div class="col-md-3">
                     <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_5.jpg" alt="Product">
+                        <img class="d-block w-100 foto" src="./img/img_5.jpg" alt="Product">
+                        <h3>Qhabalah </h3>
+                        <p>Codigo 00005</p>
+                        <p>Descripcion: <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde esse modi fugit. Consectetur suscipit, quis ut corporis porro praesentium nostrum harum consequuntur magnam adipisci ipsam alias magni accusantium iste!</p>
                         <small>Precio</small>
                         <p>$200</p>
                         <div class="row">
@@ -143,68 +79,76 @@
                                     onclick="add(this)">Añadir</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5"
-                                    data-id="5">Detalles</button>
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 my-3">
+
+                <div class="col-md-3">
                     <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_6.webp" alt="Product">
+                        <img class="d-block w-100 foto" src="./img/img_5.jpg" alt="Product">
+                        <h3>Qhabalah </h3>
+                        <p>Codigo 00005</p>
+                        <p>Descripcion: <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde esse modi fugit. Consectetur suscipit, quis ut corporis porro praesentium nostrum harum consequuntur magnam adipisci ipsam alias magni accusantium iste!</p>
                         <small>Precio</small>
                         <p>$200</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton6" data-id="6"
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
                                     onclick="add(this)">Añadir</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det6"
-                                    data-id="6">Detalles</button>
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 my-3">
+
+                <div class="col-md-3">
                     <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_7.jpg" alt="Product">
+                        <img class="d-block w-100 foto" src="./img/img_5.jpg" alt="Product">
+                        <h3>Qhabalah </h3>
+                        <p>Codigo 00005</p>
+                        <p>Descripcion: <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde esse modi fugit. Consectetur suscipit, quis ut corporis porro praesentium nostrum harum consequuntur magnam adipisci ipsam alias magni accusantium iste!</p>
                         <small>Precio</small>
                         <p>$200</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton7" data-id="7"
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
                                     onclick="add(this)">Añadir</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det7"
-                                    data-id="7">Detalles</button>
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 my-3">
+
+                <div class="col-md-3">
                     <div class="product-block">
-                        <img class="d-block w-100 foto" src="/img/img_8.webp" alt="Product">
+                        <img class="d-block w-100 foto" src="./img/img_5.jpg" alt="Product">
+                        <h3>Qhabalah </h3>
+                        <p>Codigo 00005</p>
+                        <p>Descripcion: <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde esse modi fugit. Consectetur suscipit, quis ut corporis porro praesentium nostrum harum consequuntur magnam adipisci ipsam alias magni accusantium iste!</p>
                         <small>Precio</small>
                         <p>$200</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-outline-success btn-sm" type="button" id="boton8" data-id="8"
+                                <button class="btn btn-outline-success btn-sm" type="button" id="boton5" data-id="5"
                                     onclick="add(this)">Añadir</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det8"
-                                    data-id="8">Detalles</button>
+                                <button class="btn btn-outline-danger btn-sm" type="button" id="btn_det5" data-id="5">Detalles</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
-
         </section>
-
+        
+        <!--  About us -->
         <section class="mt-5 py-5">
             <div class="encabeza">
                 <h1>Tienda Cachureando</h1>
@@ -226,6 +170,7 @@
 
             </div>
         </section>
+
     </main>
 
     <!-- Footer-->
@@ -241,9 +186,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <!-- Additional Javascript -->
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/moment.js"></script>
     <script>
 
         document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
