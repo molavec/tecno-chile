@@ -1,19 +1,12 @@
 $(document).ready(function(){
             
-    $(".carousel-caption h5").addClass('animated slideInLeft');
-    
-    $(".carousel-caption p").addClass('animated slideInRight');
     
 });
 
 
-//var codeBlock = '<h1>Holaaa</h1>';
-//document.getElementById("products").innerHTML= codeBlock
-
-
 const productBlocks = catalog.map( (product) => {
-    return `<div class="col-md-3">
-    <div class="product-block">
+    return `<div class="col-md-3 my-3">
+    <div id="${product.codigo}" class="product-block">
         <img class="d-block w-100 foto" src="${product.imagen}" alt="Product">
         <h3>${product.nombre}</h3>
         <p>Codigo ${product.codigo}</p>
