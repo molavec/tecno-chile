@@ -53,12 +53,21 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
+    <br>
+
     <!-- Contenido -->
-    <main>
+    <main class="container">
         
-        <!-- Test code injection -->
-        <section id="Cards">
-            <h1>Holaaa</h1>
+
+        <section>
+
+            <div id="products" class="row row my-1 py-4">
+                <!-- PRODUCTS HERE -->
+            </div>
+
         </section>
 
         <!-- Products Section -->
@@ -156,7 +165,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <img src="/img/tienda.jpg" class="img-thumbnail" alt="Imagen de inicio">
+                        <img src="./img/tienda.jpg" class="img-thumbnail" alt="Imagen de inicio">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <h2>Un libro es una herramienta...</h2>
@@ -186,12 +195,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <!-- Additional Javascript -->
+    <script type="text/javascript" src="./js/catalogo.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/scripts.js"></script>
     <script type="text/javascript" src="./js/moment.js"></script>
     <script>
-
-        document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
 
         function add(p) {
             let ident = document.getElementById(p.id);
