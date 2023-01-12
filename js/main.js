@@ -99,10 +99,6 @@ $(document).ready(function(){
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
-
-        
-        
-
     });
     
 
@@ -112,6 +108,14 @@ $(document).ready(function(){
         // deplegar/esconder el totalizador, usar if
          $("#totalizador").toggle()
 
+    });
+
+    // Eliminar del carro
+    $('#totalizador .cart-remove').click( function() {
+        console.log('uuid elemento', $(this).attr('uuid'));
+        const uuid = $(this).attr('uuid'); // obtiene el id del producto a eliminar
+        const index = productsInCart.findIndex((product) => { product.id === uuid }); // obtiene el indice en el arreglo de productos en el carro del objeto a eliminar
+        productsInCart.splice(index, 1); // elimina el producto con la funcion splice
     });
 });
 
