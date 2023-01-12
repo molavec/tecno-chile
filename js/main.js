@@ -82,16 +82,20 @@ $(document).ready(function(){
         console.log('info', $(this).attr('info'));
         console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
 
+        // Obtener la cantidad de productos
+        // TIP: utilizar .parent() y .child para seleccionar la cantidad de productos.
+
         // Cambiar el estado de boton anadido, usar if
         // TIP: crear 2 botones. utilizar .hide() .show() o .toggle() para cambiar la visibilidad de uno u otro.
-
         
         // add product in cart, usar if
-        // TIP: utilizar un producto
+        // TIP: utilizar push() para anadir producto en el carro
 
-        // update variables
+        // reconstruir html con el listado de productos
+        // TIP: utilizar array.push() para actualizar la variable 'productsInCart' y jquery.html() para reemplazar el $(#totalizador)
+
         
-        // contruir el html del carro
+        
 
     });
     
