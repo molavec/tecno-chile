@@ -137,3 +137,12 @@ footer p {
 .cart-image{
   max-width: 70px;
 }
+
+  #cart-qty {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+  } 

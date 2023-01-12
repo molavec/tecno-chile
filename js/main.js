@@ -1,5 +1,5 @@
 
-// CALCULO DE TOTALES
+// --> CALCULO DE TOTALES
 /**
  * Total sin impuestos
  * @param { [{price: number; qty: number;}] } productsInCart 
@@ -36,24 +36,49 @@ const getTax = (productsInCart) => {
     return value*TAX;
 }
 
+/**
+ * Valor Impuesto
+ * @param { [{price: number; qty: number;}] } productsInCart 
+ */
+const getTotalProducts = (productsInCart) => {
+    const value = productsInCart.reduce(
+        (acumulador, product) =>  acumulador + product.qty
+    );
+    return value;
+}
 
-// ACTIONS
+// --> EVENTOS
+//Variable que almacena los productos anadidos al carro
 let productsInCart = {};
 
 $(document).ready(function(){
 
-    // acciones al a
+    // acciones de los botones anadir al carro 
     $('.product-block .add-button').click( function() {
-        // change state, usar if
-        // add product in cart
-        // update variables    
+        
+        console.log('boton anadir', $(this));
+        // Cambiar el estado de boton anadido, usar if
+        
+        // add product in cart, usar if
+
+        // update variables
+        
+        // contruir el html del carro
+
     });
     
+
+    // acciones del boton del carro 
+    $('#cart-button').click( function() {
+        console.log('boton carro', $(this));
+        // deplegar/esconder el totalizador, usar if
+         $("#totalizador").toggle()
+
+    });
 });
 
 
-// PRODUCTS FROM JS
-
+// Genera html con productos y lo anade al html
 const productBlocks = catalog.map( (product) => {
     return `<div class="col-md-3 my-3">
     <div id="${product.codigo}" class="product-block">
@@ -68,9 +93,6 @@ const productBlocks = catalog.map( (product) => {
             </div>
             <div class="col-md-6">
                 <button idMio="${product.codigo}" class="add-button btn btn-outline-success btn-sm" type="button">Añadir</button>
-            </div>
-            <div class="col-md-6">
-                <button class="btn btn-outline-danger btn-sm" type="button">Detalles</button>
             </div>
         </div>
     </div>
