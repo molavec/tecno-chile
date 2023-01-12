@@ -82,17 +82,23 @@ $(document).ready(function(){
         console.log('info', $(this).attr('info'));
         console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
 
+        const product = JSON.parse($(this).attr('info').replace(/\'/g, '\"'));
+        console.log('product', product);
+
         // Obtener la cantidad de productos
-        // TIP: utilizar .parent() y .child para seleccionar la cantidad de productos.
+        // TIP: utilizar .parent() y .child() para seleccionar la cantidad de productos.
+        product.cantidad = 3;
+        console.log('product con catidad', product);
 
         // Cambiar el estado de boton anadido, usar if
         // TIP: crear 2 botones. utilizar .hide() .show() o .toggle() para cambiar la visibilidad de uno u otro.
+        // TIP alt: utilizar .css()
         
-        // add product in cart, usar if
-        // TIP: utilizar push() para anadir producto en el carro
+        // add product y la cantidad al carro
+        // TIP: utilizar array.push() para actualizar la variable 'productsInCart'
 
         // reconstruir html con el listado de productos
-        // TIP: utilizar array.push() para actualizar la variable 'productsInCart' y jquery.html() para reemplazar el $(#totalizador)
+        // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
 
         
         
@@ -110,7 +116,7 @@ $(document).ready(function(){
 });
 
 
-// Genera html con productos y lo anade al html
+// CONSTRUCCION DEL CATALOGO
 const productBlocks = catalog.map( (product) => {
     return `<div class="col-md-3 my-3">
     <div id="${product.codigo}" class="product-block">
@@ -137,8 +143,6 @@ for (let i=0; i < productBlocks.length ; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 
-// console.log('productBlocks', productBlocks);
-// console.log('productsHTML', productsHTML);
 
 document.getElementById("products").innerHTML = productsHTML;
 
