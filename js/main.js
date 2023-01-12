@@ -77,7 +77,7 @@ $(document).ready(function(){
 
     // acciones de los botones anadir al carro 
     $('.product-block .add-button').click( function() {
-        
+        console.log('boton anadir', this);
         console.log('boton anadir', $(this));
         console.log('info', $(this).attr('info'));
         console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
@@ -87,7 +87,9 @@ $(document).ready(function(){
 
         // Obtener la cantidad de productos
         // TIP: utilizar .parent() y .child() para seleccionar la cantidad de productos.
-        product.cantidad = 3;
+        const cantidad = $(this).parent().parent().children(".box-cantidad").children(".input-cantidad").val();
+        console.log('cantidad', cantidad);
+        product.cantidad = cantidad;
         console.log('product con catidad', product);
 
         // Cambiar el estado de boton anadido, usar if
@@ -126,11 +128,13 @@ const productBlocks = catalog.map( (product) => {
         <p>${product.descripcion}</p>
         <p>${product.precio}</p>
         <div class="row">
-            <div class="col-md-6">
+            <div class="box-cantidad col-md-6">
                 <input class="input-cantidad" type="number" placeholder="cantidad" value="0"/>
             </div>
             <div class="col-md-6">
-                <button info="${JSON.stringify(product).replace(/\"/g, '\'')}" class="add-button btn btn-outline-success btn-sm" type="button">Añadir</button>
+                <button info="${JSON.stringify(product).replace(/\"/g, '\'')}" class="add-button btn btn-outline-success btn-sm" type="button">
+                    Añadir
+                </button>
             </div>
         </div>
     </div>
