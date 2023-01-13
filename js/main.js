@@ -77,62 +77,84 @@ $(document).ready(function(){
 
     // acciones de los botones anadir al carro 
     $('.product-block .add-button').click( function() {
-        console.log('boton anadir', this);
-        console.log('boton anadir', $(this));
-        console.log('info', $(this).attr('info'));
-        console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
+        // console.log('boton anadir', this);
+        // console.log('boton anadir', $(this));
+        // console.log('info', $(this).attr('info'));
+        // console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
 
         const product = JSON.parse($(this).attr('info').replace(/\'/g, '\"'));
-        console.log('product', product);
+        // console.log('product', product);
 
         // Obtener la cantidad de productos
         // TIP: utilizar .parent() y .child() para seleccionar la cantidad de productos.
         const cantidad = $(this).parent().parent().children(".box-cantidad").children(".input-cantidad").val();
-        console.log('cantidad', cantidad);
+        // console.log('cantidad', cantidad);
         product.cantidad = cantidad;
-        console.log('product con catidad', product);
+        // console.log('product con catidad', product);
 
         // Cambiar el estado de boton anadido, usar if
         // TIP: crer 2 botones. utilizar .hide() .show() o .toggle() para cambiar la visibilidad de uno u otro.
         // TIP alt: utilizar .css()
         // esconde boton actual
         const addButton = $(this);
-       const addedButton = $(this).siblings(".added-button");
-       addButton.toggle();
-       addedButton.toggle();
+        const addedButton = $(this).siblings(".added-button");
+        addButton.toggle();
+        addedButton.toggle();
 
-       setTimeout(
-        function(){
-            addButton.toggle();
-            addedButton.toggle();
-        },
-        1000
-       )
+        setTimeout(
+            function(){
+                addButton.toggle();
+                addedButton.toggle();
+            },
+            1000
+        );
 
-
-
-       
-
-        
-        
         // add product 
         // TIP: utilizar array.push() para actualizar la variable 'productsInCart'
 
         productsInCart.push(product);
-
         console.log('productsInCart', productsInCart);
-
-
-
-
-
-
 
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
+        
+        const productsInCartHTML = productsInCart.map( (product) => {
+            return `
+                <li>
+                    <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
+                    <p>${product.nombre}</p>
+                    <p>${product.cantidad} x ${product.precio}</p>
+                    <button class="cart-remove"> Eliminar </button>
+                </li>
+                <br>
+        `
+        });
+
+        console.log('productsInCartHTML', productsInCartHTML.join('\n'));
+
+        $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
+
+
+
     });
     
+
+    const cartItem = `
+    
+        <section id="totalizadordinamico" class="container">
+            <ul>
+                <li>
+                    <img src="" class="cart-image" alt="">
+                    <p></p>
+                    <p></p>
+                    <button></button>
+                </li>
+            </ul>
+        </section>
+
+    `;
+
 
     // acciones del boton del carro 
     $('#cart-button').click( function() {
@@ -168,7 +190,7 @@ const productBlocks = catalog.map( (product) => {
         <p>${product.precio}</p>
         <div class="row">
             <div class="box-cantidad col-md-6">
-                <input class="input-cantidad" type="number" placeholder="cantidad" value="0"/>
+                <input class="input-cantidad" type="number" placeholder="cantidad" value="1"/>
             </div>
             <div class="col-md-6">
                 <button info="${JSON.stringify(product).replace(/\"/g, '\'')}" class="add-button btn btn-outline-success btn-sm" type="button">Añadir</button>
