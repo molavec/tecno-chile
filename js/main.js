@@ -62,9 +62,9 @@ const getTotalProducts = (productsInCart) => {
  * Valor comision
  * @param { totalSinImpuesto: number } totalSinImpuesto 
  */
-const getComision = (totalSinImpuesto) => {
+const getShippingCost = (total) => {
     const comision = 0.05;
-    return totalSinImpuesto * comision;
+    return total * comision;
 }
 
 /**
@@ -165,6 +165,8 @@ $(document).ready(function () {
         $("#total-neto").html(totalNeto);
         $("#iva").html(iva);
         $("#total").html(total);
+        $("#shipping").html(getShippingCost(total));
+        $("#total-with-shipping").html(total + getShippingCost(total));
         
         const productsInCartHTML = getProductsListCart(productsInCart);
         //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
@@ -204,6 +206,9 @@ $(document).ready(function () {
             $("#total-neto").html(getTotalWithoutTax(productsInCart));
             $("#iva").html(getTax(productsInCart));
             $("#total").html(getTotalWithTax(productsInCart));
+            
+            $("#shipping").html(getShippingCost(getTotalWithTax(productsInCart)));
+            $("#total-with-shipping").html(getTotalWithTax(productsInCart) + getShippingCost(total));
 
 
         });
