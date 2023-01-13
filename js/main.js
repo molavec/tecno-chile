@@ -69,6 +69,26 @@ const getTotal = (totalSinImpuesto, Impuesto, Comision) => {
 }
 
 
+function getProductsListCart(productList){
+    const productHtmlArray = productList.map( (product) => {
+        return `
+            <li>
+                <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
+                <p>${product.nombre}</p>
+                <p>${product.cantidad} x ${product.precio}</p>
+                <button class="cart-remove" uuid="${product.codigo}"> Eliminar </button>
+            </li>
+            <br>
+    `
+    });
+
+    console.log("productList", productList);
+    console.log("productHtmlArray", productHtmlArray);
+    return productHtmlArray;
+
+}
+
+
 // --> EVENTOS
 //Variable que almacena los productos anadidos al carro
 let productsInCart = [];
@@ -77,8 +97,8 @@ $(document).ready(function(){
 
     // acciones de los botones anadir al carro 
     $('.product-block .add-button').click( function() {
-        // console.log('boton anadir', this);
-        // console.log('boton anadir', $(this));
+        //console.log('boton anadir', this);
+        //console.log('boton anadir', $(this));
         // console.log('info', $(this).attr('info'));
         // console.log('info parsed', JSON.parse($(this).attr('info').replace(/\'/g, '\"')));
 
@@ -119,23 +139,31 @@ $(document).ready(function(){
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
         
-        const productsInCartHTML = productsInCart.map( (product) => {
-            return `
-                <li>
-                    <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
-                    <p>${product.nombre}</p>
-                    <p>${product.cantidad} x ${product.precio}</p>
-                    <button class="cart-remove" uuid="${product.codigo}"> Eliminar </button>
-                </li>
-                <br>
-        `
-        });
-
-        console.log('productsInCartHTML', productsInCartHTML.join('\n'));
-
+        const productsInCartHTML = getProductsListCart(productsInCart);
+        //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
         $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
 
 
+        // Add event to remove buttons
+        $('#totalizador .cart-remove').click( function() {
+
+            console.log('uuid elemento', $(this).attr('uuid'));
+
+            const uuid = $(this).attr('uuid'); // obtiene el id del producto a eliminar
+
+            // eliminado elemento del arreglo
+            console.log('productsInCart', productsInCart);
+            const index = productsInCart.findIndex((product) => { product.id === uuid }); // obtiene el indice en el arreglo de productos en el carro del objeto a eliminar
+            productsInCart.splice(index, 1); // elimina el producto con la funcion splice
+            console.log('productsInCart', productsInCart);
+
+            // Reconstruye el html del totalizador
+            const productsInCartHTML = getProductsListCart(productsInCart);
+    
+            //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
+            $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
+
+        });
 
     });
     
@@ -147,19 +175,8 @@ $(document).ready(function(){
 
     });
 
-    // Eliminar del carro
-    $('#totalizador .cart-remove').click( function() {
-        console.log('uuid elemento', $(this).attr('uuid'));
-        const uuid = $(this).attr('uuid'); // obtiene el id del producto a eliminar
-        const index = productsInCart.findIndex((product) => { product.id === uuid }); // obtiene el indice en el arreglo de productos en el carro del objeto a eliminar
-        productsInCart.splice(index, 1); // elimina el producto con la funcion splice
-    });
+    
 });
-
-
-
-
-
 
 
 // CONSTRUCCION DEL CATALOGO
