@@ -71,7 +71,7 @@ const getTotal = (totalSinImpuesto, Impuesto, Comision) => {
 
 // --> EVENTOS
 //Variable que almacena los productos anadidos al carro
-let productsInCart = {};
+let productsInCart = [];
 
 $(document).ready(function(){
 
@@ -93,29 +93,60 @@ $(document).ready(function(){
         console.log('product con catidad', product);
 
         // Cambiar el estado de boton anadido, usar if
-        // TIP: crear 2 botones. utilizar .hide() .show() o .toggle() para cambiar la visibilidad de uno u otro.
+        // TIP: crer 2 botones. utilizar .hide() .show() o .toggle() para cambiar la visibilidad de uno u otro.
         // TIP alt: utilizar .css()
+        // esconde boton actual
+        const addButton = $(this);
+       const addedButton = $(this).siblings(".added-button");
+       addButton.toggle();
+       addedButton.toggle();
+
+       setTimeout(
+        function(){
+            addButton.toggle();
+            addedButton.toggle();
+        },
+        1000
+       )
+
+
+
+       
+
         
-        // add product y la cantidad al carro
+        
+        // add product 
         // TIP: utilizar array.push() para actualizar la variable 'productsInCart'
+
+        productsInCart.push(product);
+
+        console.log('productsInCart', productsInCart);
+
+
+
+
+
+
+
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
-
-        
-        
-
     });
     
 
     // acciones del boton del carro 
     $('#cart-button').click( function() {
         console.log('boton carro', $(this));
-        // deplegar/esconder el totalizador, usar if
+        // deplegar/esconder el totalizador
          $("#totalizador").toggle()
 
     });
 });
+
+
+
+
+
 
 
 // CONSTRUCCION DEL CATALOGO
@@ -132,9 +163,8 @@ const productBlocks = catalog.map( (product) => {
                 <input class="input-cantidad" type="number" placeholder="cantidad" value="0"/>
             </div>
             <div class="col-md-6">
-                <button info="${JSON.stringify(product).replace(/\"/g, '\'')}" class="add-button btn btn-outline-success btn-sm" type="button">
-                    Añadir
-                </button>
+                <button info="${JSON.stringify(product).replace(/\"/g, '\'')}" class="add-button btn btn-outline-success btn-sm" type="button">Añadir</button>
+                <button class="added-button btn btn-outline-success btn-sm" type="button" style="display:none;">Añadido</button>
             </div>
         </div>
     </div>
