@@ -53,13 +53,20 @@
                             <button id="cart-button" class="button">
                                 <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" width="20" /> Carro
                             </button>
-                            <div id="cart-qty">
+                            <!--<div id="cart-qty">
                                 10 
+                            </div>-->
+                            <!--CONTADOR DEL CARRO-->
+                            <div class="texto">
+                                <label id="cart-qty">0</label>
+                            </div>
+                            <div class="group-buttons">
+                                <a class="button-link" id="incrementa" href="#"></a>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </nav>
     </header>
 
@@ -73,9 +80,9 @@
 
         <!-- totalizador -->
         <section id="totalizador" class="container" id="listaproductos" style="border: 1px solid black; display: none;">
-          <ul class="item-list">
-            <!-- items in cart here -->
-          </ul>
+            <ul class="item-list">
+                <!-- items in cart here -->
+            </ul>
         </section>
 
         <!-- Productos dinamicos -->
@@ -126,6 +133,7 @@
     <script type="text/javascript" src="./js/catalogo.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/moment.js"></script>
+    <script type="text/javascript" src="./js/carro.js"></script>
     <script>
 
         function add(p) {
