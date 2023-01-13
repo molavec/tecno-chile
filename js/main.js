@@ -2,47 +2,58 @@
 // --> CALCULO DE TOTALES
 /**
  * Total sin impuestos
- * @param { [{price: number; qty: number;}] } productsInCart 
+ * @param { [{precio: number; cantidad: number;}] } productsInCart 
  */
 const getTotalWithoutTax = (productsInCart) => {
     const value = productsInCart.reduce(
-        (acumulador, product) => acumulador + product.price * product.qty
+        (acumulador, product) => {
+            console.log('acumulador', acumulador)
+            console.log('product.precio', product.precio);
+            console.log('product.cantidad', product.cantidad);
+            const aux = parseInt(acumulador) + parseInt(product.precio) * parseInt(product.cantidad)
+            console.log('aux', aux);
+            return aux
+        }, 0
     );
+    console.log('value', value)
     return value;
 }
 
 
 /**
  * Total con impuestos
- * @param { [{price: number; qty: number;}] } productsInCart 
+ * @param { [{precio: number; qty: number;}] } productsInCart 
  */
 const getTotalWithTax = (productsInCart) => {
     const TAX = 1.19;
     const value = productsInCart.reduce(
-        (acumulador, product) => acumulador + product.price * product.qty
+        (acumulador, product) => (acumulador + parseInt(product.precio) * parseInt(product.cantidad)),
+        0
     );
     return value * TAX;
 }
 
 /**
  * Valor Impuesto
- * @param { [{price: number; qty: number;}] } productsInCart 
+ * @param { [{precio: number; qty: number;}] } productsInCart 
  */
 const getTax = (productsInCart) => {
     const TAX = 0.19;
     const value = productsInCart.reduce(
-        (acumulador, product) => acumulador + product.price * product.qty
+        (acumulador, product) => (acumulador + parseInt(product.precio) * parseInt(product.cantidad)),
+        0
     );
     return value * TAX;
 }
 
 /**
  * Valor Impuesto
- * @param { [{price: number; qty: number;}] } productsInCart 
+ * @param { [{precio: number; qty: number;}] } productsInCart 
  */
 const getTotalProducts = (productsInCart) => {
     const value = productsInCart.reduce(
-        (acumulador, product) => acumulador + product.qty
+        (acumulador, product) => (acumulador + parseInt(product.cantidad)),
+        0
     );
     return value;
 }
@@ -76,14 +87,14 @@ function getProductsListCart(productList){
                 <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
                 <p>${product.nombre}</p>
                 <p>${product.cantidad} x ${product.precio}</p>
-                <button class="cart-remove" uuid="${product.codigo}"> Eliminar </button>
+                <button class="cart-remove" qty=${product.cantidad} uuid="${product.codigo}"> Eliminar </button>
             </li>
             <br>
     `
     });
 
-    console.log("productList", productList);
-    console.log("productHtmlArray", productHtmlArray);
+    //console.log("productList", productList);
+    //console.log("productHtmlArray", productHtmlArray);
     return productHtmlArray;
 
 }
@@ -136,11 +147,24 @@ $(document).ready(function () {
         // TIP: utilizar array.push() para actualizar la variable 'productsInCart'
 
         productsInCart.push(product);
-        console.log('productsInCart', productsInCart);
+        //console.log('productsInCart', productsInCart);
 
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
+
+        // Actualizar totales
+        const totalNeto = getTotalWithoutTax(productsInCart);
+        const iva = getTax(productsInCart);
+        const total = getTotalWithTax(productsInCart);
+
+        console.log('totalNeto', totalNeto);
+        console.log('iva', iva);
+        console.log('total', total);
+
+        $("#total-neto").html(totalNeto);
+        $("#iva").html(iva);
+        $("#total").html(total);
         
         const productsInCartHTML = getProductsListCart(productsInCart);
         //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
@@ -150,24 +174,37 @@ $(document).ready(function () {
         contadorProductos = contadorProductos + parseInt(cantidad);
         $("#cart-qty").html(contadorProductos);
 
-        // Add event to remove buttons
+        // Add event to remove button
         $('#totalizador .cart-remove').click( function() {
 
-            console.log('uuid elemento', $(this).attr('uuid'));
+            //console.log('uuid elemento', $(this).attr('uuid'));
 
             const uuid = $(this).attr('uuid'); // obtiene el id del producto a eliminar
 
             // eliminado elemento del arreglo
-            console.log('productsInCart', productsInCart);
+            //console.log('productsInCart', productsInCart);
             const index = productsInCart.findIndex((product) => { product.id === uuid }); // obtiene el indice en el arreglo de productos en el carro del objeto a eliminar
             productsInCart.splice(index, 1); // elimina el producto con la funcion splice
-            console.log('productsInCart', productsInCart);
+            //console.log('productsInCart', productsInCart);
 
-            // Reconstruye el html del totalizador
-            const productsInCartHTML = getProductsListCart(productsInCart);
+            // disminuir el contador de la notificacion
+            contadorProductos = contadorProductos - $(this).attr('qty');
+            $("#cart-qty").html(contadorProductos);
+
+            // remover al padre
+            $(this).parent().remove();
+            
+            // // Reconstruye el html del totalizador
+            // const productsInCartHTML = getProductsListCart(productsInCart);
     
-            //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
-            $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
+            // //console.log('productsInCartHTML', productsInCartHTML.join('\n'));
+            // $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
+
+            // recalcular totales
+            $("#total-neto").html(getTotalWithoutTax(productsInCart));
+            $("#iva").html(getTax(productsInCart));
+            $("#total").html(getTotalWithTax(productsInCart));
+
 
         });
 
@@ -175,7 +212,7 @@ $(document).ready(function () {
 
     // acciones del boton del carro 
     $('#cart-button').click(function () {
-        console.log('boton carro', $(this));
+        //console.log('boton carro', $(this));
         // deplegar/esconder el totalizador
         $("#totalizador").toggle()
 
