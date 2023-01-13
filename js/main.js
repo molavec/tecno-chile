@@ -6,7 +6,7 @@
  */
 const getTotalWithoutTax = (productsInCart) => {
     const value = productsInCart.reduce(
-        (acumulador, product) =>  acumulador + product.price * product.qty
+        (acumulador, product) => acumulador + product.price * product.qty
     );
     return value;
 }
@@ -19,9 +19,9 @@ const getTotalWithoutTax = (productsInCart) => {
 const getTotalWithTax = (productsInCart) => {
     const TAX = 1.19;
     const value = productsInCart.reduce(
-        (acumulador, product) =>  acumulador + product.price * product.qty
+        (acumulador, product) => acumulador + product.price * product.qty
     );
-    return value* TAX;
+    return value * TAX;
 }
 
 /**
@@ -31,9 +31,9 @@ const getTotalWithTax = (productsInCart) => {
 const getTax = (productsInCart) => {
     const TAX = 0.19;
     const value = productsInCart.reduce(
-        (acumulador, product) =>  acumulador + product.price * product.qty
+        (acumulador, product) => acumulador + product.price * product.qty
     );
-    return value*TAX;
+    return value * TAX;
 }
 
 /**
@@ -42,7 +42,7 @@ const getTax = (productsInCart) => {
  */
 const getTotalProducts = (productsInCart) => {
     const value = productsInCart.reduce(
-        (acumulador, product) =>  acumulador + product.qty
+        (acumulador, product) => acumulador + product.qty
     );
     return value;
 }
@@ -72,11 +72,14 @@ const getTotal = (totalSinImpuesto, Impuesto, Comision) => {
 // --> EVENTOS
 //Variable que almacena los productos anadidos al carro
 let productsInCart = [];
+let contadorProductos = 0;
 
-$(document).ready(function(){
+
+
+$(document).ready(function () {
 
     // acciones de los botones anadir al carro 
-    $('.product-block .add-button').click( function() {
+    $('.product-block .add-button').click(function () {
         // console.log('boton anadir', this);
         // console.log('boton anadir', $(this));
         // console.log('info', $(this).attr('info'));
@@ -102,7 +105,7 @@ $(document).ready(function(){
         addedButton.toggle();
 
         setTimeout(
-            function(){
+            function () {
                 addButton.toggle();
                 addedButton.toggle();
             },
@@ -118,8 +121,8 @@ $(document).ready(function(){
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
-        
-        const productsInCartHTML = productsInCart.map( (product) => {
+
+        const productsInCartHTML = productsInCart.map((product) => {
             return `
                 <li>
                     <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
@@ -135,20 +138,23 @@ $(document).ready(function(){
 
         $("#totalizador .item-list").html(productsInCartHTML.join('\n'));
 
+        //aumentar el contador de cantidad
+        contadorProductos = contadorProductos + parseInt(cantidad);
+        $("#cart-qty").html(contadorProductos);
 
 
     });
-    
+
     // acciones del boton del carro 
-    $('#cart-button').click( function() {
+    $('#cart-button').click(function () {
         console.log('boton carro', $(this));
         // deplegar/esconder el totalizador
-         $("#totalizador").toggle()
+        $("#totalizador").toggle()
 
     });
 
     // Eliminar del carro
-    $('#totalizador .cart-remove').click( function() {
+    $('#totalizador .cart-remove').click(function () {
         console.log('uuid elemento', $(this).attr('uuid'));
         const uuid = $(this).attr('uuid'); // obtiene el id del producto a eliminar
         const index = productsInCart.findIndex((product) => { product.id === uuid }); // obtiene el indice en el arreglo de productos en el carro del objeto a eliminar
@@ -163,7 +169,7 @@ $(document).ready(function(){
 
 
 // CONSTRUCCION DEL CATALOGO
-const productBlocks = catalog.map( (product) => {
+const productBlocks = catalog.map((product) => {
     return `<div class="col-md-3 my-3">
     <div id="${product.codigo}" class="product-block">
         <img class="d-block w-100 foto" src="${product.imagen}" alt="Product">
@@ -186,7 +192,7 @@ const productBlocks = catalog.map( (product) => {
 
 let productsHTML = '';
 
-for (let i=0; i < productBlocks.length ; i++) {
+for (let i = 0; i < productBlocks.length; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 
