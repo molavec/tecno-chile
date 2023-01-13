@@ -125,7 +125,7 @@ $(document).ready(function(){
                     <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
                     <p>${product.nombre}</p>
                     <p>${product.cantidad} x ${product.precio}</p>
-                    <button class="cart-remove"> Eliminar </button>
+                    <button class="cart-remove" uuid="${product.codigo}"> Eliminar </button>
                 </li>
                 <br>
         `
@@ -139,23 +139,6 @@ $(document).ready(function(){
 
     });
     
-
-    const cartItem = `
-    
-        <section id="totalizadordinamico" class="container">
-            <ul>
-                <li>
-                    <img src="" class="cart-image" alt="">
-                    <p></p>
-                    <p></p>
-                    <button></button>
-                </li>
-            </ul>
-        </section>
-
-    `;
-
-
     // acciones del boton del carro 
     $('#cart-button').click( function() {
         console.log('boton carro', $(this));
