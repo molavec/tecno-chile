@@ -71,7 +71,7 @@ const getTotal = (totalSinImpuesto, Impuesto, Comision) => {
 
 // --> EVENTOS
 //Variable que almacena los productos anadidos al carro
-let productsInCart = {};
+let productsInCart = [];
 
 $(document).ready(function(){
 
@@ -113,8 +113,19 @@ $(document).ready(function(){
 
         
         
-        // add product y la cantidad al carro
+        // add product 
         // TIP: utilizar array.push() para actualizar la variable 'productsInCart'
+
+        productsInCart.push(product);
+
+        console.log('productsInCart', productsInCart);
+
+
+
+
+
+
+
 
         // reconstruir html con el listado de productos
         // TIP: .html() para reemplazar el $(#totalizador).html(codigohtml)
