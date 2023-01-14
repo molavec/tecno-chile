@@ -64,7 +64,7 @@ const getTotalProducts = (productsInCart) => {
  */
 const getShippingCost = (total) => {
     const comision = 0.05;
-    return total * comision;
+    return (total < 100000) ? total * comision : 0;
 }
 
 /**
