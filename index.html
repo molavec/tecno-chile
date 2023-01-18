@@ -1,159 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Free Bootstrap 4 Carousel">
-    <meta name="keywords"
-        content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider for freee, Free Bootstrap 4 Slider, Free HTML Slider">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Free Bootstrap 4 Carousel">
+        <meta name="keywords"
+            content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider
+            for freee, Free Bootstrap 4 Slider, Free HTML Slider">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cachureando</title>
+        <!-- Bootstrap 4 Default CSS -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+            crossorigin="anonymous">
+        <!-- Additional CSS -->
+        <link rel="stylesheet" href="./css/estilos.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <!-- Animate CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    </head>
+    <body>
+        <!--Header-->
+        <header class="mb-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary
+                fixed-top">
+                <div class="container-fluid">
+                    <div style="color: aliceblue;">Cachureando</div>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="float-right">
+                        <div class="collapse navbar-collapse"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page"
+                                        href="/">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contacto.html">Contacto</a>
+                                </li>
 
-    <title>Cachureando</title>
+                            </ul>
 
-    <!-- Bootstrap 4 Default CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
-    <!-- Additional CSS -->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/main.css">
-
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-</head>
-
-<body>
-    <!--Header-->
-    <header class="mb-4">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
-            <div class="container-fluid">
-                <div style="color: aliceblue;">Cachureando</div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="float-right">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
-
-                        </ul>
-
-                        <!--carrito imagen-->
-                        <div class="carrito">
-                            <button id="cart-button" class="button">
-                                <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" width="20" /> Carro
-                            </button>
-                            <!--<div id="cart-qty">
+                            <!--carrito imagen-->
+                            <div class="carrito">
+                                <button id="cart-button" class="button">
+                                    <img
+                                        src="https://cdn-icons-png.flaticon.com/512/107/107831.png"
+                                        width="20" /> Carro
+                                </button>
+                                <!--<div id="cart-qty">
                                 10 
                             </div>-->
-                            <!--CONTADOR DEL CARRO-->
-                            <div class="texto">
-                                <label id="cart-qty">0</label>
-                            </div>
-                            <div class="group-buttons">
-                                <a class="button-link" id="incrementa" href="#"></a>
+                                <!--CONTADOR DEL CARRO-->
+                                <div class="texto">
+                                    <label id="cart-qty">0</label>
+                                </div>
+                                <div class="group-buttons">
+                                    <a class="button-link" id="incrementa"
+                                        href="#"></a>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        </nav>
-    </header>
+                </nav>
+            </header>
 
-    <br>
-    <br>
-    <br>
-    <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
-    <!-- Contenido -->
-    <main class="container">
+            <!-- Contenido -->
+            <main class="container">
 
-        <!-- totalizador -->
-        <section id="totalizador" class="container" id="listaproductos" style="border: 1px solid black; display: none;">
-            <ul class="item-list">
-                <!-- items in cart here -->
-            </ul>
+                <!-- totalizador -->
+                <section id="totalizador" class="container" id="listaproductos"
+                    style="border: 1px solid black; display: none;">
+                    <ul class="item-list">
+                        <!-- items in cart here -->
+                    </ul>
 
-            <hr>
+                    <hr>
 
-            <div class="totales">
-                <p>Total Neto: <span id="total-neto"></span> </p>
-                <p>IVA: <span  id="iva"></span> </p>
-                <p>Total: <span  id="total"></span> </p> 
-                <p>Despacho: <span  id="shipping"></span> </p> 
-                <p>Total con despacho: <span  id="total-with-shipping"></span> </p>    
-            </div>
-
-            <div class="confirma"></div>
-            <button type="button" class="btn btn-secondary">Ir a Pagar</button>
-        </section>
-
-        <!-- Productos dinamicos -->
-        <section>
-            <div id="products" class="row row my-1 py-4">
-                <!-- PRODUCTS HERE -->
-            </div>
-        </section>
-
-        <!--  About us -->
-        <section class="mt-5 py-5">
-            <div class="encabeza">
-                <h1>Tienda Cachureando</h1>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <img src="./img/tienda.jpg" class="img-thumbnail" alt="Imagen de inicio">
+                    <div class="totales">
+                        <p class="neto">Total Neto: <span id="total-neto"></span> </p>
+                        <p>IVA: <span id="iva"></span> </p>
+                        <p>Total: <span id="total"></span> </p>
+                        <p>Despacho: <span id="shipping"></span> </p>
+                        <p>Total con despacho: <span id="total-with-shipping"></span>
+                        </p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h2>Un libro es una herramienta...</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam voluptas temporibus eum!
-                            Impedit,
-                            culpa porro maxime distinctio expedita obcaecati exercitationem necessitatibus est aliquid
-                            tempore vitae
-                            quo nam. Maxime, atque.</p>
+                    <div class="confirma"></div>
+                    <a href="confirmacion.html" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Ir a Pagar</a>
+
+                </section>
+                <!-- Productos dinamicos -->
+                <section>
+                    <div id="products" class="row row my-1 py-4">
+                        <!-- PRODUCTS HERE -->
                     </div>
-                </div>
+                </section>
 
-            </div>
-        </section>
+                <!--  About us -->
+                <section class="mt-5 py-5">
+                    <div class="encabeza">
+                        <h1>Tienda Cachureando</h1>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <img src="./img/tienda.jpg"
+                                    class="img-thumbnail" alt="Imagen de
+                                    inicio">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h2>Un libro es una herramienta...</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Earum ipsam voluptas
+                                    temporibus eum!
+                                    Impedit,
+                                    culpa porro maxime distinctio expedita
+                                    obcaecati exercitationem necessitatibus est
+                                    aliquid
+                                    tempore vitae
+                                    quo nam. Maxime, atque.</p>
+                            </div>
+                        </div>
 
-    </main>
+                    </div>
+                </section>
 
-    <!-- Footer-->
-    <footer>
-        <p>Derechos Reservados Tienda Cachureando. Diseñado por <strong>Hormigas Quimeras</strong></p>
-    </footer>
-    <!-- End of Container -->
+            </main>
 
-    <!-- JQuery Plugin -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Footer-->
+            <footer>
+                <p>Derechos Reservados Tienda Cachureando. Diseñado por <strong>Hormigas
+                        Quimeras</strong></p>
+            </footer>
+            <!-- End of Container -->
 
-    <!-- Bootstrap JQuery Plugin -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-    <!-- Additional Javascript -->
-    <script type="text/javascript" src="./js/catalogo.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./js/moment.js"></script>
-    <script type="text/javascript" src="./js/carro.js"></script>
-    <script>
+            <!-- JQuery Plugin -->
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Bootstrap JQuery Plugin -->
+            <script
+                src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+            <!-- Additional Javascript -->
+            <script type="text/javascript" src="./js/catalogo.js"></script>
+            <script type="text/javascript" src="./js/main.js"></script>
+            <script type="text/javascript" src="./js/moment.js"></script>
+            <script type="text/javascript" src="./js/carro.js"></script>
+            <script>
 
         function add(p) {
             let ident = document.getElementById(p.id);
             $(location).attr('href', 'http://127.0.0.1:5500/carro.html?id=' + ident.dataset.id);
         }
     </script>
-</body>
+        </body>
 
-</html>
+    </html>
