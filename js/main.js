@@ -257,3 +257,4 @@ for (let i = 0; i < productBlocks.length; i++) {
 
 document.getElementById("products").innerHTML = productsHTML;
 
+var globy = [1,2,3,4,5,6,7,8,9];
