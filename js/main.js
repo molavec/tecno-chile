@@ -253,8 +253,18 @@ let productsHTML = '';
 for (let i = 0; i < productBlocks.length; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
-
-
 document.getElementById("products").innerHTML = productsHTML;
 
-var globy = [1,2,3,4,5,6,7,8,9];
+iva  = document.getElementById("iva");
+
+
+
+function pintapaga(){
+neto = document.getElementById("total-neto");
+ivan = document.getElementById("iva");
+total = document.getElementById("total")
+shipping = document.getElementById("shipping");
+totalShip = document.getElementById("total-with-shipping");
+console.log(JSON.stringify(ivan)+"gola");
+
+}
