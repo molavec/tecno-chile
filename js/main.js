@@ -231,7 +231,7 @@ const productBlocks = catalog.map((product) => {
     return `<div class="col-md-3 my-3">
     <div id="${product.codigo}" class="product-block">
         <img class="d-block w-100 foto" src="${product.imagen}" alt="Product">
-        <h3>${product.nombre}</h3>
+        <h3 id=nombreP>${product.nombre}</h3>
         <p>Codigo ${product.codigo}</p>
         <p>${product.descripcion}</p>
         <p>${product.precio}</p>
@@ -301,9 +301,9 @@ for (var i = 0; i < divs.length; i++) {
 }
 console.log(uuidArray);
 
-// obtener todos los nombres de productos y convertirlos en array
+// ***obtener todos los nombres de productos y convertirlos en array
 
-var nombreP = document.getElementById("nombreP");
+var nombreP = document.getElementById("nombreP").innerHTML;
 var nombreArray = [];
 for (var i = 0; i<nombreP.length; i++){
     var qty = nombreP[i].innerHTML;
