@@ -87,6 +87,7 @@ function getProductsListCart(productList){
                 <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
                 <p>${product.nombre}</p>
                 <p>${product.cantidad} x ${product.precio}</p>
+                <p>${product.codigo}</p>
                 <button class="cart-remove" qty=${product.cantidad} uuid="${product.codigo}"> Eliminar </button>
             </li>
             <br>
@@ -257,14 +258,15 @@ document.getElementById("products").innerHTML = productsHTML;
 
 iva  = document.getElementById("iva");
 
+iva = parseInt(document.querySelector('#iva').textContent)
+neto = parseInt(document.querySelector('#total-neto').textContent);
+shipping = parseInt(document.querySelector('#shipping').textContent);
+totalwith = parseInt(document.querySelector('#total-with-shipping').textContent);
 
 
 function pintapaga(){
-neto = document.getElementById("total-neto");
-ivan = document.getElementById("iva");
-total = document.getElementById("total")
-shipping = document.getElementById("shipping");
-totalShip = document.getElementById("total-with-shipping");
-console.log(JSON.stringify(ivan)+"gola");
 
 }
+
+ 
+console.log(document.querySelector('botonConfirmar'));

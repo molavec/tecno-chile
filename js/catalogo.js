@@ -98,5 +98,3 @@ const catalog = [
         precio: '12000'  
     }
 ]
-
-
