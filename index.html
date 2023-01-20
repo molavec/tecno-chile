@@ -1,287 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Free Bootstrap 4 Carousel">
-        <meta name="keywords"
-            content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Free Bootstrap 4 Carousel">
+  <meta name="keywords" content="Bootstrap 4 Free Carousel, Free Slider, Bootstrap 4 Slider
             for freee, Free Bootstrap 4 Slider, Free HTML Slider">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Cachureando</title>
-        <!-- Bootstrap 4 Default CSS -->
-        <link rel="stylesheet"
-            href="https:maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <!-- Font Awesome CSS -->
-        <link rel="stylesheet"
-            href="https:use.fontawesome.com/releases/v5.1.0/css/all.css"
-            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-            crossorigin="anonymous">
-        <!-- Additional CSS -->
-        <link rel="stylesheet" href="./css/estilos.css">
-        <link rel="stylesheet" href="./css/main.css">
-        <script src="/js/confirmacion.js"></script>
-             <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cachureando</title>
+  <!-- Bootstrap 4 Default CSS -->
+  <link rel="stylesheet" href="https:maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https:use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <!-- Additional CSS -->
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="/js/confirmacion.js"></script>
+  <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Animate CSS -->
-        <link rel="stylesheet"
-            href="https:cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-            <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-        <!--Header-->
-        <header class="mb-4">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!--Header-->
+  <header class="mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary
                 fixed-top">
-                <div class="container-fluid">
-                    <div style="color: aliceblue;">Cachureando</div>
-                    <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="float-right">
-                        <div class="collapse navbar-collapse"
-                            id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page"
-                                        href="/">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contacto.html">Contacto</a>
-                                </li>
+      <div class="container-fluid">
+        <div style="color: aliceblue;">Cachureando</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="float-right">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
 
-                            </ul>
+            </ul>
 
-                            <!--carrito imagen-->
-                            <div class="carrito">
-                                <button id="cart-button" class="button">
-                                    <img
-                                        src="https:cdn-icons-png.flaticon.com/512/107/107831.png"
-                                        width="20" /> Carro
-                                </button>
-                                <!--<div id="cart-qty">
+            <!--carrito imagen-->
+            <div class="carrito">
+              <button id="cart-button" class="button">
+                <img src="https:cdn-icons-png.flaticon.com/512/107/107831.png" width="20" /> Carro
+              </button>
+              <!--<div id="cart-qty">
                                 10 
                             </div>-->
-                                <!--CONTADOR DEL CARRO-->
-                                <div class="texto">
-                                    <label id="cart-qty">0</label>
-                                </div>
-                                <div class="group-buttons">
-                                    <a class="button-link" id="incrementa"
-                                        href="#"></a>
+              <!--CONTADOR DEL CARRO-->
+              <div class="texto">
+                <label id="cart-qty">0</label>
+              </div>
+              <div class="group-buttons">
+                <a class="button-link" id="incrementa" href="#"></a>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+  </header>
 
-            <br>
-            <br>
-            <br>
-            <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-            <!-- Contenido -->
-            <main class="container">
+  <!-- Contenido -->
+  <main id="shopping" class="container">
 
-                <!-- totalizador -->
-                <section id="totalizador" class="container" id="listaproductos"
-                    style="border: 1px solid black; display: none;">
-                    <ul class="item-list">
-                        <!-- items in cart here -->
-                    </ul>
+    <!-- totalizador -->
+    <section id="totalizador" class="container" id="listaproductos" style="border: 1px solid black; display: none;">
+      <ul class="item-list">
+        <!-- items in cart here -->
+      </ul>
 
-                    <hr>
+      <hr>
 
-                    <div class="totales">
-                        <p class="neto">Total Neto: <span id="total-neto"></span> </p>
-                        <p>IVA: <span id="iva"></span> </p>
-                        <p>Total: <span id="total"></span> </p>
-                        <p>Despacho: <span id="shipping"></span> </p>
-                        <p>Total con despacho: <span id="total-with-shipping"></span>
-                        </p>
-                    </div>
-                    <div class="container mt-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                          Ir a Pagar
-                        </button>
-                      </div>
+      <div class="totales">
+        <p class="neto">Total Neto: <span id="total-neto"></span> </p>
+        <p>IVA: <span id="iva"></span> </p>
+        <p>Total: <span id="total"></span> </p>
+        <p>Despacho: <span id="shipping"></span> </p>
+        <p>Total con despacho: <span id="total-with-shipping"></span>
+        </p>
+      </div>
+      <div class="container mt-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          Ir a Pagar
+        </button>
+      </div>
 
-                </section>
-                <!-- Productos dinamicos -->
-                <section>
-                    <div id="products" class="row row my-1 py-4">
-                        <!-- PRODUCTS HERE -->
-                    </div>
-                </section>
+    </section>
+    <!-- Productos dinamicos -->
+    <section>
+      <div id="products" class="row row my-1 py-4">
+        <!-- PRODUCTS HERE -->
+      </div>
+    </section>
 
-                <!--  About us -->
-                <section class="mt-5 py-5">
-                    <div class="encabeza">
-                        <h1>Tienda Cachureando</h1>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <img src="./img/tienda.jpg"
-                                    class="img-thumbnail" alt="Imagen de
+    <!--  About us -->
+    <section class="mt-5 py-5">
+      <div class="encabeza">
+        <h1>Tienda Cachureando</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src="./img/tienda.jpg" class="img-thumbnail" alt="Imagen de
                                     inicio">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2>Un libro es una herramienta...</h2>
+            <p>Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Earum ipsam voluptas
+              temporibus eum!
+              Impedit,
+              culpa porro maxime distinctio expedita
+              obcaecati exercitationem necessitatibus est
+              aliquid
+              tempore vitae
+              quo nam. Maxime, atque.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <form onsubmit="confirmCart(event)">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Confirma tu compra</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="contenedor">
+                <div class="usuario">
+                  <div class="col-75">
+                    <div class="container">
+
+                      <div class="row">
+                        <div class="col-50">
+                          <h3>Dirección para despacho/boleta</h3>
+                          <label for="fname"><i class="fa fa-user"></i> Nombre Completo</label>
+                          <input type="text" id="fname" name="firstname" placeholder="Keka Galindo Mondaca ">
+                          <label for="email"><i class="fa fa-envelope"></i> Correo Electronico</label>
+                          <input type="text" id="email" name="email" placeholder="juanito@ejemplo.com"><br>
+                          <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
+                          <input type="text" id="adr" name="address" placeholder="Avenida Siempreviva 123"><br>
+                          <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
+                          <input type="text" id="city" name="city" placeholder="Titirilquén">
+
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="state">Región</label>
+                              <input type="text" id="state" name="state" placeholder="Región de Los Rios">
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <h2>Un libro es una herramienta...</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Earum ipsam voluptas
-                                    temporibus eum!
-                                    Impedit,
-                                    culpa porro maxime distinctio expedita
-                                    obcaecati exercitationem necessitatibus est
-                                    aliquid
-                                    tempore vitae
-                                    quo nam. Maxime, atque.</p>
+                            <div class="col-50">
+                              <label for="zip">Código Postal</label>
+                              <input type="text" id="zip" name="zip" placeholder="1780000">
                             </div>
+                          </div>
                         </div>
 
+                        <div class="col-50">
+                          <h3>Pago</h3>
+                          <label for="fname">Tarjetas Aceptadas</label>
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                          </div>
+                          <label for="cname">Nombre de tarjeta</label>
+                          <input type="text" id="cname" name="cardname" placeholder="Keka Galindo Mondaca">
+                          <label for="ccnum">Numero de tarjeta</label>
+                          <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="expyear">Fecha de expiración</label>
+                              <input type="text" id="expyear" name="expyear" placeholder="14/28">
+                            </div>
+                            <div class="col-50">
+                              <label for="cvv">Código de Seguridad CVV</label>
+                              <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </section>
-                
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Confirma tu compra</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-            <div class="contenedor">
-                 <div class="usuario">
-                     <div class="col-75">
-                       <div class="container">
-                         <form action="/action_page.php">
-                 
-                           <div class="row">
-                             <div class="col-50">
-                               <h3>Dirección para despacho/boleta</h3>
-                               <label for="fname"><i class="fa fa-user"></i> Nombre Completo</label>
-                               <input type="text" id="fname" name="firstname" placeholder="Keka Galindo Mondaca ">
-                               <label for="email"><i class="fa fa-envelope"></i> Correo Electronico</label>
-                               <input type="text" id="email" name="email" placeholder="juanito@ejemplo.com"><br>
-                               <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
-                               <input type="text" id="adr" name="address" placeholder="Avenida Siempreviva 123"><br>
-                               <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                               <input type="text" id="city" name="city" placeholder="Titirilquén">
-                 
-                               <div class="row">
-                                 <div class="col-50">
-                                   <label for="state">Región</label>
-                                   <input type="text" id="state" name="state" placeholder="Región de Los Rios">
-                                 </div>
-                                 <div class="col-50">
-                                   <label for="zip">Código Postal</label>
-                                   <input type="text" id="zip" name="zip" placeholder="1780000">
-                                 </div>
-                               </div>
-                             </div>
-                 
-                             <div class="col-50">
-                               <h3>Pago</h3>
-                               <label for="fname">Tarjetas Aceptadas</label>
-                               <div class="icon-container">
-                                 <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                 <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                 <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                 <i class="fa fa-cc-discover" style="color:orange;"></i>
-                               </div>
-                               <label for="cname">Nombre de tarjeta</label>
-                               <input type="text" id="cname" name="cardname" placeholder="Keka Galindo Mondaca">
-                               <label for="ccnum">Numero de tarjeta</label>
-                               <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-               
-                               <div class="row">
-                                 <div class="col-50">
-                                   <label for="expyear">Fecha de expiración</label>
-                                   <input type="text" id="expyear" name="expyear" placeholder="14/28">
-                                 </div>
-                                 <div class="col-50">
-                                   <label for="cvv">Código de Seguridad CVV</label>
-                                   <input type="text" id="cvv" name="cvv" placeholder="352">
-                                 </div>
-                               </div>
-                             </div>
-                 
-                           </div>              
-                         </form>
-                       </div>
-                     </div>
+                  </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                  <input type="submit" class="btn btn-primary" value="Confirmar Compra" />
+
+                </div>
+          </form>
 
         </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" id="botonConfirmar"value="Submit Button">Confirmar Compra</button>
-
-        </div>
-  
       </div>
     </div>
-  </div>
-  <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
-            </main>
-<!-- Scrollable modal -->
+  </main>
 
-            <!-- Footer-->
-            <footer>
-                <p>Derechos Reservados Tienda Cachureando. Diseñado por <strong>Hormigas
-                        Quimeras</strong></p>
-            </footer>
-            <!-- End of Container -->
+  <main id="invoice" class="container">
+    
+  </main>
 
-            <!-- JQuery Plugin -->
-            <script
-                src="https:ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <!-- Bootstrap JQuery Plugin -->
-            <script
-                src="https:maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-            <!-- Additional Javascript -->
-            <script type="text/javascript" src="./js/catalogo.js"></script>
-            <script type="text/javascript" src="./js/main.js"></script>
-            <script type="text/javascript" src="./js/moment.js"></script>
-            <script type="text/javascript" src="./js/carro.js"></script>
-            <script>
+  <!-- Footer-->
+  <footer>
+    <p>Derechos Reservados Tienda Cachureando. Diseñado por <strong>Hormigas
+        Quimeras</strong></p>
+  </footer>
+  <!-- End of Container -->
 
-        function add(p) {
-            let ident = document.getElementById(p.id);
-            $(location).attr('href', 'http:127.0.0.1:5500/carro.html?id=' + ident.dataset.id);
-        }
-    </script>
-        </body>
+  <!-- JQuery Plugin -->
+  <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap JQuery Plugin -->
+  <script src="https:maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- Additional Javascript -->
+  <script type="text/javascript" src="./js/catalogo.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script type="text/javascript" src="./js/moment.js"></script>
+  <script type="text/javascript" src="./js/carro.js"></script>
 
-    </html>
+</body>
+
+</html>

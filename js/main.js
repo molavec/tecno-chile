@@ -264,9 +264,8 @@ shipping = parseInt(document.querySelector('#shipping').textContent);
 totalwith = parseInt(document.querySelector('#total-with-shipping').textContent);
 
 
-function pintapaga(){
-
-}
-
- 
-console.log(document.querySelector('botonConfirmar'));
+const confirmCart = (event) => {
+    event.preventDefault();
+    console.log('form submit confirm Cart');
+};
+//console.log(document.querySelector('botonConfirmar'));
