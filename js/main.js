@@ -85,7 +85,7 @@ function getProductsListCart(productList){
         return `
             <li>
                 <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
-                <p>${product.nombre}</p>
+                <p id="nombreP">${product.nombre}</p>
                 <p>${product.cantidad} x ${product.precio}</p>
                 <button class="cart-remove" qty=${product.cantidad} uuid="${product.codigo}"> Eliminar </button>
             </li>
@@ -101,9 +101,9 @@ function getProductsListCart(productList){
 
 
 // --> EVENTOS
-//Variable que almacena los productos anadidos al carro
-let productsInCart = [];
-let contadorProductos = 0;
+//variable que almacena los productos anadidos al carro
+var productsInCart = [];
+var contadorProductos = 0;
 
 
 
@@ -248,23 +248,65 @@ const productBlocks = catalog.map((product) => {
 </div>`
 });
 
-let productsHTML = '';
+var productsHTML = '';
 
-for (let i = 0; i < productBlocks.length; i++) {
+for (var i = 0; i < productBlocks.length; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 document.getElementById("products").innerHTML = productsHTML;
 
-iva  = document.getElementById("iva");
 
 
+// info para crear boleta //
 
-function pintapaga(){
-neto = document.getElementById("total-neto");
-ivan = document.getElementById("iva");
-total = document.getElementById("total")
-shipping = document.getElementById("shipping");
 totalShip = document.getElementById("total-with-shipping");
-console.log(JSON.stringify(ivan)+"gola");
+ivan = document.getElementById("iva");
+total = document.getElementById("total");
+shipping = document.getElementById("shipping");
+neto = document.getElementById("total-neto");
 
+
+
+//obtener todos los macro datos de la venta
+
+const irPagarBoton = document.getElementById("pagapaga");
+
+irPagarBoton.addEventListener("click", function() {
+    console.log(totalShip.innerHTML);
+    console.log(ivan.innerHTML);
+    console.log(total.innerHTML);
+    console.log(neto.innerHTML);
+    console.log(shipping.innerHTML);
+});
+
+
+// obtener todos los valores qty y convertirlos en array
+
+var divs = document.getElementsByClassName("cart-remove");
+var qtyArray = [];
+for (var i = 0; i < divs.length; i++) {
+    var qty = parseInt(divs[i].getAttribute("qty"));
+    qtyArray.push(qty);
 }
+console.log(qtyArray);
+
+
+// obtener todos los valores uuid y convertirlos en array
+
+var divs = document.getElementsByClassName("cart-remove");
+var uuidArray = [];
+for (var i = 0; i < divs.length; i++) {
+    var qty = divs[i].getAttribute("uuid");
+    uuidarray.push(qty);
+}
+console.log(uuidArray);
+
+// obtener todos los nombres de productos y convertirlos en array
+
+var nombreP = document.getElementById("nombreP");
+var nombreArray = [];
+for (var i = 0; i<nombreP.length; i++){
+    var qty = nombreP[i].innerHTML;
+    nombreArray.push(qty);
+}
+console.log(nombreArray);
