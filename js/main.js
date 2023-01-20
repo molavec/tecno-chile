@@ -85,7 +85,7 @@ function getProductsListCart(productList){
         return `
             <li>
                 <img src="${product.imagen}" class="cart-image" alt="Image ${product.nombre}">
-                <p>${product.nombre}</p>
+                <p id="nombreP">${product.nombre}</p>
                 <p>${product.cantidad} x ${product.precio}</p>
                 <p>${product.codigo}</p>
                 <button class="cart-remove" qty=${product.cantidad} uuid="${product.codigo}"> Eliminar </button>
@@ -102,9 +102,9 @@ function getProductsListCart(productList){
 
 
 // --> EVENTOS
-//Variable que almacena los productos anadidos al carro
-let productsInCart = [];
-let contadorProductos = 0;
+//variable que almacena los productos anadidos al carro
+var productsInCart = [];
+var contadorProductos = 0;
 
 
 
@@ -232,7 +232,7 @@ const productBlocks = catalog.map((product) => {
     return `<div class="col-md-3 my-3">
     <div id="${product.codigo}" class="product-block">
         <img class="d-block w-100 foto" src="${product.imagen}" alt="Product">
-        <h3>${product.nombre}</h3>
+        <h3 id=nombreP>${product.nombre}</h3>
         <p>Codigo ${product.codigo}</p>
         <p>${product.descripcion}</p>
         <p>${product.precio}</p>
@@ -249,20 +249,20 @@ const productBlocks = catalog.map((product) => {
 </div>`
 });
 
-let productsHTML = '';
+var productsHTML = '';
 
-for (let i = 0; i < productBlocks.length; i++) {
+for (var i = 0; i < productBlocks.length; i++) {
     productsHTML = productsHTML + productBlocks[i];
 }
 document.getElementById("products").innerHTML = productsHTML;
 
-iva  = document.getElementById("iva");
 
 iva = parseInt(document.querySelector('#iva').textContent)
 neto = parseInt(document.querySelector('#total-neto').textContent);
 shipping = parseInt(document.querySelector('#shipping').textContent);
 totalwith = parseInt(document.querySelector('#total-with-shipping').textContent);
 
+// info para crear boleta //
 
 const confirmCart = (event) => {
     event.preventDefault();
