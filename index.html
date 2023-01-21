@@ -19,6 +19,9 @@
   <script src="/js/confirmacion.js"></script>
   <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- Invoice Style -->
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+
   <!-- Animate CSS -->
   <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -101,6 +104,7 @@
       </div>
 
     </section>
+
     <!-- Productos dinamicos -->
     <section>
       <div id="products" class="row row my-1 py-4">
@@ -136,7 +140,7 @@
       </div>
     </section>
 
-    <!-- The Modal -->
+    <!-- The Modal Customer Info -->
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -158,23 +162,19 @@
                       <div class="row">
                         <div class="col-50">
                           <h3>Dirección para despacho/boleta</h3>
-                          <label for="fname"><i class="fa fa-user"></i> Nombre Completo</label>
-                          <input type="text" id="fname" name="firstname" placeholder="Keka Galindo Mondaca ">
+                          <label for="fullname"><i class="fa fa-user"></i> Nombre Completo</label>
+                          <input type="text" id="fullname" name="fullname" placeholder="Keka Galindo Mondaca">
                           <label for="email"><i class="fa fa-envelope"></i> Correo Electronico</label>
-                          <input type="text" id="email" name="email" placeholder="juanito@ejemplo.com"><br>
-                          <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
-                          <input type="text" id="adr" name="address" placeholder="Avenida Siempreviva 123"><br>
-                          <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                          <input type="text" id="city" name="city" placeholder="Titirilquén">
+                          <input type="email" id="email" name="email" placeholder="juanito@ejemplo.com"><br>
+                          <label for="address"><i class="fa fa-address-card-o"></i> Dirección</label>
+                          <input type="text" id="address" name="address" placeholder="Avenida Siempreviva 123"><br>
+                          <label for="comuna"><i class="fa fa-institution"></i> Comuna</label>
+                          <input type="text" id="comuna" name="comuna" placeholder="Titirilquén">
 
                           <div class="row">
                             <div class="col-50">
                               <label for="state">Región</label>
                               <input type="text" id="state" name="state" placeholder="Región de Los Rios">
-                            </div>
-                            <div class="col-50">
-                              <label for="zip">Código Postal</label>
-                              <input type="text" id="zip" name="zip" placeholder="1780000">
                             </div>
                           </div>
                         </div>
@@ -226,7 +226,80 @@
   </main>
 
   <main id="invoice" class="container">
-    
+    <div class="invoice-header clearfix">
+      <div id="logo">
+        <img src="/img/logo.png">
+      </div>
+      <h1>CACHUREANDO.CL</h1>
+      <div id="company" class="clearfix">
+        <div>Cachureando LTDA.</div>
+        <div>Suecia 345<br /> Viña del Mar, US</div>
+        <div>(32) 519-0450</div>
+        <div><a href="mailto:contacto@cachureando.cl">contacto@cachureando.cl</a></div>
+      </div>
+      <div id="invoice-customer-info">
+        <div>RECIBE </div>
+        <div>DIRECCIÓN </div>
+        <div>COMUNA </div>
+        <div>REGIÓN </div>
+        <div>EMAIL </div>
+      </div>
+    </div>
+    <div class="invoice-body">
+      <table>
+        <thead>
+          <tr>
+            <th class="service">CATÁLOGO</th>
+            <th class="desc">PRODUCTO</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-products">
+          <tr>
+            <td class="service">Design</td>
+            <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">26</td>
+            <td class="total">$1,040.00</td>
+          </tr>
+          <tr>
+            <td class="service">Development</td>
+            <td class="desc">Developing a Content Management System-based Website</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">80</td>
+            <td class="total">$3,200.00</td>
+          </tr>
+          <tr>
+            <td class="service">SEO</td>
+            <td class="desc">Optimize the site for search engines (SEO)</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">20</td>
+            <td class="total">$800.00</td>
+          </tr>
+          <tr>
+            <td class="service">Training</td>
+            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">4</td>
+            <td class="total">$160.00</td>
+          </tr>
+          <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total">$5,200.00</td>
+          </tr>
+          <tr>
+            <td colspan="4">IVA</td>
+            <td class="total">$1,300.00</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total">TOTAL</td>
+            <td class="grand total">$6,500.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 
   <!-- Footer-->

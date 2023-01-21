@@ -7,15 +7,15 @@
 const getTotalWithoutTax = (productsInCart) => {
     const value = productsInCart.reduce(
         (acumulador, product) => {
-            console.log('acumulador', acumulador)
-            console.log('product.precio', product.precio);
-            console.log('product.cantidad', product.cantidad);
+            // console.log('acumulador', acumulador)
+            // console.log('product.precio', product.precio);
+            // console.log('product.cantidad', product.cantidad);
             const aux = parseInt(acumulador) + parseInt(product.precio) * parseInt(product.cantidad)
-            console.log('aux', aux);
-            return aux
+            // console.log('aux', aux);
+            return aux;
         }, 0
     );
-    console.log('value', value)
+    // console.log('value', value)
     return value;
 }
 
@@ -158,8 +158,9 @@ $(document).ready(function () {
         const totalNeto = getTotalWithoutTax(productsInCart);
         const iva = getTax(productsInCart);
         const total = getTotalWithTax(productsInCart);
+        
 
-        console.log('totalNeto', totalNeto);
+        // console.log('totalNeto', totalNeto);
         console.log('iva', iva);
         console.log('total', total);
 
@@ -257,15 +258,77 @@ for (var i = 0; i < productBlocks.length; i++) {
 document.getElementById("products").innerHTML = productsHTML;
 
 
-iva = parseInt(document.querySelector('#iva').textContent)
-neto = parseInt(document.querySelector('#total-neto').textContent);
-shipping = parseInt(document.querySelector('#shipping').textContent);
-totalwith = parseInt(document.querySelector('#total-with-shipping').textContent);
+// iva = parseInt(document.querySelector('#iva').textContent)
+// neto = parseInt(document.querySelector('#total-neto').textContent);
+// shipping = parseInt(document.querySelector('#shipping').textContent);
+// totalwith = parseInt(document.querySelector('#total-with-shipping').textContent);
 
-// info para crear boleta //
-
+// funcion para crear la boleta
 const confirmCart = (event) => {
     event.preventDefault();
     console.log('form submit confirm Cart');
+    
+    // Valores requeridos por la boleta
+    console.log('fullname', event.target.elements.fullname.value);
+    console.log('email', event.target.elements.email.value);
+    console.log('address', event.target.elements.address.value);
+    console.log('comuna', event.target.elements.comuna.value);
+    console.log('state', event.target.elements.state.value);
+    console.log('productsInCart', productsInCart);    
+    console.log('total-neto', getTotalWithoutTax(productsInCart));
+    console.log('iva', getTax(productsInCart));
+    console.log('total', getTotalWithTax(productsInCart));
+    console.log('shipping', getShippingCost(getTotalWithTax(productsInCart)));
+    console.log('total-with-shipping', getTotalWithTax(productsInCart) + getShippingCost(total));
+
+    //build invoice
+    // customer info
+    customerInfo = `
+        <div>${event.target.elements.fullname.value}</div>
+        <div>${event.target.elements.email.value} </div>
+        <div>${event.target.elements.address.value} </div>
+        <div>${event.target.elements.comuna.value} </div>
+        <div>${event.target.elements.state.value} </div>
+    `;
+    $('#invoice-customer-info').html(customerInfo)
+
+    // products
+    const productTables = productsInCart.map((product) => {
+        return `
+            <tr>
+                <td class="code">${product.codigo}</td>
+                <td class="desc">${product.nombre}</td>
+                <td class="unit">$${product.precio}</td>
+                <td class="qty">${product.cantidad}</td>
+                <td class="total">$${product.precio * product.cantidad}</td>
+            </tr>
+        `;
+    }); 
+
+    // totals
+    const totalNeto = `
+            <tr>
+                <td class="code">${product.codigo}</td>
+                <td class="desc">${product.nombre}</td>
+                <td class="unit">$${product.precio}</td>
+                <td class="qty">${product.cantidad}</td>
+                <td class="total">$${product.precio * product.cantidad}</td>
+            </tr>
+        `;
+
+
+
+    //hide header main#shopping footer
+    $('header').hide();
+    $('#shopping').hide();
+    $('footer').hide();
+    $('.modal-backdrop').hide();
+    
+    //show invoice
+    $('#invoice').show();
+    //modal issues
+    $('body').css('overflow', 'auto');
+    $('body').css('padding', '0px');
+
 };
-//console.log(document.querySelector('botonConfirmar'));
+

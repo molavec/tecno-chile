@@ -1,15 +1,15 @@
-.clearfix:after {
+#invoice .clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-a {
+#invoice a {
   color: #5D6975;
   text-decoration: underline;
 }
 
-body {
+#invoice body {
   position: relative;
   width: 21cm;  
   height: 29.7cm; 
@@ -21,21 +21,21 @@ body {
   font-family: Arial;
 }
 
-header {
+#invoice header {
   padding: 10px 0;
   margin-bottom: 30px;
 }
 
-#logo {
+#invoice #logo {
   text-align: center;
   margin-bottom: 10px;
 }
 
-#logo img {
+#invoice #logo img {
   width: 90px;
 }
 
-h1 {
+#invoice h1 {
   border-top: 1px solid  #5D6975;
   border-bottom: 1px solid  #5D6975;
   color: #5D6975;
@@ -44,14 +44,13 @@ h1 {
   font-weight: normal;
   text-align: center;
   margin: 0 0 20px 0;
-  background: url(dimension.png);
 }
 
-#project {
+#invoice #project {
   float: left;
 }
 
-#project span {
+#invoice #project span {
   color: #5D6975;
   text-align: right;
   width: 52px;
@@ -60,33 +59,33 @@ h1 {
   font-size: 0.8em;
 }
 
-#company {
+#invoice #company {
   float: right;
   text-align: right;
 }
 
 #project div,
-#company div {
+#invoice #company div {
   white-space: nowrap;        
 }
 
-table {
+#invoice table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 20px;
 }
 
-table tr:nth-child(2n-1) td {
+#invoice table tr:nth-child(2n-1) td {
   background: #F5F5F5;
 }
 
 table th,
-table td {
+#invoice table td {
   text-align: center;
 }
 
-table th {
+#invoice table th {
   padding: 5px 20px;
   color: #5D6975;
   border-bottom: 1px solid #C1CED9;
@@ -95,36 +94,36 @@ table th {
 }
 
 table .service,
-table .desc {
+#invoice table .desc {
   text-align: left;
 }
 
-table td {
+#invoice table td {
   padding: 20px;
   text-align: right;
 }
 
 table td.service,
-table td.desc {
+#invoice table td.desc {
   vertical-align: top;
 }
 
 table td.unit,
 table td.qty,
-table td.total {
+#invoice table td.total {
   font-size: 1.2em;
 }
 
-table td.grand {
+#invoice table td.grand {
   border-top: 1px solid #5D6975;;
 }
 
-#notices .notice {
+#invoice #notices .notice {
   color: #5D6975;
   font-size: 1.2em;
 }
 
-footer {
+#invoice footer {
   color: #5D6975;
   width: 100%;
   height: 30px;
