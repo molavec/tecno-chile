@@ -274,6 +274,7 @@ const confirmCart = (event) => {
     console.log('address', event.target.elements.address.value);
     console.log('comuna', event.target.elements.comuna.value);
     console.log('state', event.target.elements.state.value);
+
     console.log('productsInCart', productsInCart);
 
     console.log('total-neto', getTotalWithoutTax(productsInCart));
@@ -361,6 +362,8 @@ const confirmCart = (event) => {
     $('body').css('overflow', 'auto');
     $('body').css('padding', '0px');
 
+
+    //Envio  de Correos
     const boletaHTML = `
     <main id="invoice" class="container">
         <div class="invoice-header clearfix">
@@ -427,7 +430,7 @@ const confirmCart = (event) => {
                 <td colspan="4">Total con Despacho</td>
                 <td class="total">${getTotalWithTax(productsInCart) + getShippingCost(total)}</td>
                 </tr>
-                
+
             </tbody>
         </table>
         </div>
