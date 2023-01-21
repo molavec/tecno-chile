@@ -335,7 +335,7 @@ const confirmCart = (event) => {
 
     const despacho = `
             <tr>
-            <td colspan="4">Total Neto</td>
+            <td colspan="4">Despacho</td>
             <td class="total">${getShippingCost(getTotalWithTax(productsInCart))}</td>
             </tr>
         `;
@@ -343,7 +343,7 @@ const confirmCart = (event) => {
 
     const totalConDespacho = `
             <tr>
-            <td colspan="4">Total Neto</td>
+            <td colspan="4">Total con Despacho</td>
             <td class="total">${getTotalWithTax(productsInCart) + getShippingCost(total)}</td>
             </tr>
         `;
@@ -360,6 +360,92 @@ const confirmCart = (event) => {
     //modal issues
     $('body').css('overflow', 'auto');
     $('body').css('padding', '0px');
+
+    const boletaHTML = `
+    <main id="invoice" class="container">
+        <div class="invoice-header clearfix">
+        <h1>CACHUREANDO.CL</h1>
+        <div id="company" class="clearfix">
+            <div>Cachureando LTDA.</div>
+            <div>Suecia 345<br /> Viña del Mar, US</div>
+            <div>(32) 519-0450</div>
+            <div><a href="mailto:contacto@cachureando.cl">contacto@cachureando.cl</a></div>
+        </div>
+        <div id="invoice-customer-info">
+            <div>${event.target.elements.fullname.value}</div>
+            <div>${event.target.elements.email.value} </div>
+            <div>${event.target.elements.address.value} </div>
+            <div>${event.target.elements.comuna.value} </div>
+            <div>${event.target.elements.state.value} </div>
+        </div>
+        </div>
+        <div class="invoice-body">
+        <table>
+            <thead>
+            <tr>
+                <th class="service">CÓDIGO</th>
+                <th class="desc">PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>TOTAL</th>
+            </tr>
+            </thead>
+            <tbody id="invoice-products">
+            ${productsInCart.map((product) => {
+                return `
+                    <tr>
+                        <td class="code">${product.codigo}</td>
+                        <td class="desc">${product.nombre}</td>
+                        <td class="unit">$${product.precio}</td>
+                        <td class="qty">${product.cantidad}</td>
+                        <td class="total">$${product.precio * product.cantidad}</td>
+                    </tr>
+                `;
+            })}
+
+                <tr>
+                <td colspan="4">Total sin impuesto</td>
+                <td class="total">${getTotalWithoutTax(productsInCart)}</td>
+                </tr>
+
+                <tr>
+                <td colspan="4">IVA (19%)</td>
+                <td class="total">${getTax(productsInCart)}</td>
+                </tr>
+
+                <tr>
+                <td colspan="4">Total</td>
+                <td class="total">${getTotalWithTax(productsInCart)}</td>
+                </tr>
+                
+                <tr>
+                <td colspan="4">Despacho</td>
+                <td class="total">${getShippingCost(getTotalWithTax(productsInCart))}</td>
+                </tr>
+
+                <tr>
+                <td colspan="4">Total con Despacho</td>
+                <td class="total">${getTotalWithTax(productsInCart) + getShippingCost(total)}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        </div>
+    </main>
+    `;
+
+    // Send Email
+    Email.send({
+        Host : "*",
+        Username : "username",
+        Password : "password",
+        To : event.target.elements.email.value,
+        From : "ventas@cachurando.com",
+        Subject : "Boleta Cachureando",
+        Body : boletaHTML
+    }).then(
+      message => alert('Hemos enviado la boleta a tu correo. Revisa tu bandeja de entrada.')
+    ).catch( error => alert('Hemos enviado la boleta a tu correo. Revisa tu bandeja de entrada.') );
 
 };
 
