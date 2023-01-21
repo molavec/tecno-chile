@@ -274,7 +274,8 @@ const confirmCart = (event) => {
     console.log('address', event.target.elements.address.value);
     console.log('comuna', event.target.elements.comuna.value);
     console.log('state', event.target.elements.state.value);
-    console.log('productsInCart', productsInCart);    
+    console.log('productsInCart', productsInCart);
+
     console.log('total-neto', getTotalWithoutTax(productsInCart));
     console.log('iva', getTax(productsInCart));
     console.log('total', getTotalWithTax(productsInCart));
@@ -293,7 +294,7 @@ const confirmCart = (event) => {
     $('#invoice-customer-info').html(customerInfo)
 
     // products
-    const productTables = productsInCart.map((product) => {
+    const productTableRows = productsInCart.map((product) => {
         return `
             <tr>
                 <td class="code">${product.codigo}</td>
@@ -304,19 +305,49 @@ const confirmCart = (event) => {
             </tr>
         `;
     }); 
+    console.log('productTableRows', productTableRows)
+    $('#invoice-products').append(productTableRows);
 
     // totals
-    const totalNeto = `
+    const totalSinImpuesto = `
             <tr>
-                <td class="code">${product.codigo}</td>
-                <td class="desc">${product.nombre}</td>
-                <td class="unit">$${product.precio}</td>
-                <td class="qty">${product.cantidad}</td>
-                <td class="total">$${product.precio * product.cantidad}</td>
+            <td colspan="4">Total sin impuesto</td>
+            <td class="total">${getTotalWithoutTax(productsInCart)}</td>
             </tr>
         `;
+    $('#invoice-products').append(totalSinImpuesto);
 
+    const iva = `
+            <tr>
+            <td colspan="4">IVA (19%)</td>
+            <td class="total">${getTax(productsInCart)}</td>
+            </tr>
+        `;
+    $('#invoice-products').append(iva);
 
+    const totalWithTax = `
+            <tr>
+            <td colspan="4">Total</td>
+            <td class="total">${getTotalWithTax(productsInCart)}</td>
+            </tr>
+        `;
+    $('#invoice-products').append(totalWithTax);
+
+    const despacho = `
+            <tr>
+            <td colspan="4">Total Neto</td>
+            <td class="total">${getShippingCost(getTotalWithTax(productsInCart))}</td>
+            </tr>
+        `;
+    $('#invoice-products').append(despacho);
+
+    const totalConDespacho = `
+            <tr>
+            <td colspan="4">Total Neto</td>
+            <td class="total">${getTotalWithTax(productsInCart) + getShippingCost(total)}</td>
+            </tr>
+        `;
+    $('#invoice-products').append(totalConDespacho);
 
     //hide header main#shopping footer
     $('header').hide();
