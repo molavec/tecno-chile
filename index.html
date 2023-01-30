@@ -43,10 +43,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Inicio</a>
+                <a class="nav-link" aria-current="page" href="#home">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
+                <a class="nav-link" aria-current="page" href="#products">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#about">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contacto</a>
               </li>
 
             </ul>
@@ -105,8 +111,8 @@
 
     </section>
 
-    <!-- carrousel -->  
-    <section>
+    <!-- carrousel -->
+    <section id="home">
 
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -138,7 +144,7 @@
     </section>
 
     <!--  About us -->
-    <section class="mt-5 py-5">
+    <section id="about" class="mt-5 py-5">
       <div class="encabeza">
         <h1>Tienda Tecno Chile</h1>
       </div>
@@ -164,6 +170,46 @@
 
       </div>
     </section>
+
+    <!-- Contacto -->
+    <section id="contact">
+      <div class="py-4 mt-5">
+        <div class="encabeza">
+          <h1>Contacto</h1>
+        </div>
+        <form class="formulario sombra" id="frmContacto" novalidate>
+          <fieldset>
+            <legend> Contactanos</legend>
+            <div class="contenedor-campos">
+              <div class="campos">
+                <label>Nombre</label>
+                <input class="input-text" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre"
+                  required>
+              </div>
+              <div class="campos">
+                <label>Télefono</label>
+                <input class="input-text" type="tel" name="telefono" id="telefono" placeholder="9 9999 9999" required>
+              </div>
+              <div class="campos">
+                <label>Correo</label>
+                <input class="input-text" type="email" name="correo" id="correo" placeholder="correo@dominio.cl"
+                  required>
+              </div>
+              <div class="campos">
+                <label>Mensaje</label>
+                <textarea class="input-text" name="mensaje" id="mensaje" placeholder="Detalle del mensaje"
+                  required></textarea>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <div class="float-right">
+            <button type="submit" class="btn btn-danger">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
 
     <!-- The Modal Customer Info -->
     <div class="modal fade" id="myModal">
@@ -248,6 +294,7 @@
       </div>
     </div>
 
+
   </main>
 
   <main id="invoice" class="container" style="display: none;">
@@ -303,11 +350,14 @@
   <!-- SMTP JS -->
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
   <!-- Additional Javascript -->
   <script type="text/javascript" src="./js/catalogo.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
-  <script type="text/javascript" src="./js/moment.js"></script>
   <script type="text/javascript" src="./js/carro.js"></script>
+  <script type="text/javascript" src="./js/contacto.js"></script>
 
 </body>
 
