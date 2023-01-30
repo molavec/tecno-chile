@@ -367,12 +367,12 @@ const confirmCart = (event) => {
     const boletaHTML = `
     <main id="invoice" class="container">
         <div class="invoice-header clearfix">
-        <h1>CACHUREANDO.CL</h1>
+        <h1>Tecno Chile.CL</h1>
         <div id="company" class="clearfix">
-            <div>Cachureando LTDA.</div>
+            <div>Tecno Chile LTDA.</div>
             <div>Suecia 345<br /> Viña del Mar, US</div>
             <div>(32) 519-0450</div>
-            <div><a href="mailto:contacto@cachureando.cl">contacto@cachureando.cl</a></div>
+            <div><a href="mailto:contacto@Tecno Chile.cl">contacto@Tecno Chile.cl</a></div>
         </div>
         <div id="invoice-customer-info">
             <div>${event.target.elements.fullname.value}</div>
@@ -444,7 +444,7 @@ const confirmCart = (event) => {
         Password : "password",
         To : event.target.elements.email.value,
         From : "ventas@cachurando.com",
-        Subject : "Boleta Cachureando",
+        Subject : "Boleta Tecno Chile",
         Body : boletaHTML
     }).then(
       message => alert('Hemos enviado la boleta a tu correo. Revisa tu bandeja de entrada.')
