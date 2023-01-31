@@ -49,14 +49,12 @@ body {
 /* Footer */
 
 footer {
-  display: flex;
+  text-align: center;
   width: 100%;
-  height: 80px;
   margin-top: 10%;
   background-color: #2f4f4f;
   border-top: 10px solid rgb(241, 40, 40);
-  align-items: center;
-  justify-content: center;
+  color: white;
 }
 
 footer p {
@@ -146,3 +144,12 @@ footer p {
     display: inline-block;
     color: white;
   } 
+
+  .icon-footer {
+    padding: 5px;
+    font-size: 3rem;
+  }
+
+  .icon-footer i {
+    color: white !important;
+  }
